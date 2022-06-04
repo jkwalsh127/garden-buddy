@@ -79,8 +79,9 @@ export default function Schedule() {
                     onChange={handleInputChange}
                     type='text'
                     placeholder='Zip Code'
+                    className='zip-input'
                 />
-                <button type="button" onClick={handleFormSubmit}>Submit</button>
+                <button type="button" className='submit-btn' onClick={handleFormSubmit}>Submit</button>
                 <div className='error-div'>
                     {errorMessage && (
                         <div>

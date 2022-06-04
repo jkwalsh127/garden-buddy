@@ -22,8 +22,23 @@
     min-width: 525px;
 }
 .hardiness-legend {
-    width: 115px; 
-    height: 350px;
+    width: 15%;
+    min-width: 115px; 
+    min-height: 350px;
+}
+.zip-input {
+    height: 22px;
+}
+.submit-btn {
+    background-color: var(--brown);
+    border-radius: 3px;
+    border: 1px solid var(--light-white);
+    color: var(--light-white);
+    height: 30px;
+    width: 80px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 0 10px;
 }
 .input-label {
     margin: 0 0 10px 0;
