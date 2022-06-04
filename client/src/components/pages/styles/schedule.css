@@ -14,17 +14,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 0 20px 0;
 }
-
+.input-label {
+    margin: 0 0 10px 0;
+}
+.zip-form {
+    margin: 10px 0 0 0;
+}
 .error-div {
-    height: 50px;
+    height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 5px 0 0 0;
 }
 
 .error-text {
     color: red;
     margin: 0;
     font-weight: 600;
+}
+.results-label {
+    margin: 0px;
 }

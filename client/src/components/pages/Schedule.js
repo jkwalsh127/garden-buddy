@@ -33,6 +33,7 @@ export default function Schedule() {
 
         if (!validateZip(zipCode)) {
             setErrorMessage('Zipcode must be five numbers');
+            setGrowZone('');
             // We want to exit out of this code block if something is wrong so that the user can correct it
             return;
         }
@@ -60,15 +61,8 @@ export default function Schedule() {
             <img src={hardinessLegend} alt='hardiness legend' style={{width: '115px', height: '350px'}}></img>
         </div>
         <div className='inputContainer'>
-            <label> Find your growing zone by entering your zip code below: </label>
-            <form>
-                <div className='error-div'>
-                    {errorMessage && (
-                        <div>
-                            <p className="error-text">{errorMessage}</p>
-                        </div>
-                    )}
-                </div>
+            <label className='input-label'> Find your growing zone by entering your zip code below</label>
+            <form className='zip-form'>
                 <input 
                     value={zipCode}
                     name='zipCode'
@@ -77,11 +71,18 @@ export default function Schedule() {
                     placeholder='Zip Code'
                 />
                 <button type="button" onClick={handleFormSubmit}>Submit</button>
+                <div className='error-div'>
+                    {errorMessage && (
+                        <div>
+                            <p className="error-text">{errorMessage}</p>
+                        </div>
+                    )}
+                </div>
             </form>
 
         </div>
         <div className='resultsContainer'> 
-            <h2>Your growing zone is: {growZone}</h2>
+            <h2 className='results-label'>Your growing zone is: {growZone}</h2>
         
         </div>
     </>
