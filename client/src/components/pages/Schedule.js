@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './styles/schedule.css';
 import { validateZip } from '../../utils/helpers';
+import hardinessIMG from './images/hardiness.jpeg';
+import hardinessLegend from './images/hardinessLegend.jpeg';
+
 
 export default function Schedule() {
 
@@ -49,6 +52,10 @@ export default function Schedule() {
   return (
     <div>
         <h1 className='page-title'>Find Your Growing Zone</h1>
+        <div className='hardiness-wrap'>
+            <img src={hardinessIMG} alt='hardiness zones' style={{width: '70%', minHeight: '350px', minWidth: '525px'}}></img>
+            <img src={hardinessLegend} alt='hardiness legend' style={{width: '115px', height: '350px'}}></img>
+        </div>
         <div className='inputContainer'>
             <label> Find your growing zone by entering your zip code below: </label>
             <form>

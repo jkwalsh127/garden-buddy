@@ -1,5 +1,14 @@
 .page-title {
     margin: 0;
+    padding: 20px 0 0 0;
+    color: var(--green);
+}
+.hardiness-wrap {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .error-div {
