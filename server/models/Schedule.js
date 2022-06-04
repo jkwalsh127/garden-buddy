@@ -1,22 +1,15 @@
-const { Schema, Types } = require('mongoose');
+const mongoose = require('mongoose');
 
-const scheduleSchema = new Schema(
+const scheduleSchema = new mongoose.Schema(
   {
-    scheduleId: {
-      type: Schema.Types.ObjectId,
-      default: () => new Types.ObjectId(),
-    },
-    scheduleName: {
-      type: String,
-      required: true,
-    },
-    imageURL: {
-      type: string,
-      required: true,
+    scheduleName: String,
+    imageURL: String,
+    img:
+    {
+      data: Buffer,
+      contentType: String
     }
   },
 );
 
-const Schedule = model('schedule', scheduleSchema);
-
-module.exports = Schedule;
+module.exports = new mongoose.model('Schedule', scheduleSchema)

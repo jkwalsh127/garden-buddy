@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const {
   getSingleSchedule,
-} = require('../../controllers/studentController');
+} = require('../../controllers/scheduleController');
 
 // /api/schedule/:scheduleId
 router.route('/:studentId').get(getSingleSchedule);

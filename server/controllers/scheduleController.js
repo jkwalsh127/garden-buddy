@@ -1,4 +1,4 @@
-const { Schedule } = require('../models');
+const { Schedule } = require('../models/Schedule');
 
 module.exports = {
   // Get a single schedule
