@@ -1,3 +1,7 @@
+.page-title {
+    margin: 0;
+}
+
 .error-div {
     height: 50px;
     display: flex;

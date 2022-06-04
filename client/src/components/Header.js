@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './styles/header.css';
 // import './styles/HeaderMediaQueries.css';
 
@@ -10,6 +10,13 @@ const Header = () => {
 //     event.preventDefault();
 //     Auth.logout();
 //   };
+
+  const navLinkStyles = ({ isActive }) => {
+    return {
+      fontSize: isActive ? '20px' : '16px',
+      color: isActive ? 'var(--orange)' : 'var(--light-white)',
+    }
+  }
   return (
     <header className="header">
       <Link className="" to="/">
@@ -20,12 +27,12 @@ const Header = () => {
       <div className='nav'>
         {/* {Auth.loggedIn() ? ( */}
           <>
-            <Link className="nav-link" to="/findzone">
+            <NavLink style={navLinkStyles} className="nav-link" to="/findzone">
               Find Zone
-            </Link>
-            <Link className="nav-link" to="/profile">
+            </NavLink>
+            <NavLink style={navLinkStyles} className="nav-link" to="/profile">
               View Profile
-            </Link>
+            </NavLink>
           </>
         {/*}) : (
           <>

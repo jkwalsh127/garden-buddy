@@ -48,7 +48,7 @@ export default function Schedule() {
 
   return (
     <div>
-        <h1>Find Your Growing Zone</h1>
+        <h1 className='page-title'>Find Your Growing Zone</h1>
         <div className='inputContainer'>
             <label> Find your growing zone by entering your zip code below: </label>
             <form>

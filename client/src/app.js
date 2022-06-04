@@ -8,13 +8,15 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <div className='container'>
-          <Routes>
-            <Route 
-                path="/findzone" 
-                element={<Schedule />}
-            />
-          </Routes>
+        <div className='outer-container'>
+          <div className='inner-container'>
+            <Routes>
+              <Route 
+                  path="/findzone" 
+                  element={<Schedule />}
+              />
+            </Routes>
+          </div>
         </div>
       </div>
     </Router>
