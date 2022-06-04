@@ -11,5 +11,5 @@ module.exports = {
           : res.json(schedule)
       )
       .catch((err) => res.status(500).json(err));
-  }
+  },
 };

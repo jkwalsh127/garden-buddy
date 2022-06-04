@@ -1,15 +1,18 @@
-const mongoose = require('mongoose');
+const { Schema, model } = require('mongoose');
 
-const scheduleSchema = new mongoose.Schema(
+const scheduleSchema = new Schema(
   {
-    scheduleName: String,
-    imageURL: String,
-    img:
-    {
-      data: Buffer,
-      contentType: String
+    scheduleName: {
+      type: String,
+      required: true,
+    },
+    imageURL: {
+      type: String,
+      required: true,
     }
   },
 );
 
-module.exports = new mongoose.model('Schedule', scheduleSchema)
+const Schedule = model('schedule', scheduleSchema);
+
+module.exports = Schedule;

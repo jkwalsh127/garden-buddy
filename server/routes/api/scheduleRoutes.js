@@ -4,6 +4,6 @@ const {
 } = require('../../controllers/scheduleController');
 
 // /api/schedule/:scheduleId
-router.route('/:studentId').get(getSingleSchedule);
+router.route('/:scheduleId').get(getSingleSchedule);
 
 module.exports = router;
