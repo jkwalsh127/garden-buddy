@@ -16,6 +16,15 @@
     align-items: center;
     margin: 0 0 20px 0;
 }
+.hardiness-map {
+    width: 70%;
+    min-height: 350px; 
+    min-width: 525px;
+}
+.hardiness-legend {
+    width: 115px; 
+    height: 350px;
+}
 .input-label {
     margin: 0 0 10px 0;
 }
@@ -37,4 +46,19 @@
 }
 .results-label {
     margin: 0px;
+}
+.schedule-label {
+    margin: 10px 0 0 0;
+}
+.schedule-container {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 20px 0;
+    height: fit-content;
+}
+.schedule-img {
+    width: 80%;
 }

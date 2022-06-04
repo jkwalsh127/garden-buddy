@@ -12,6 +12,7 @@ export default function Schedule() {
     const [zipCode, setZipCode] = useState('');
     const [growZone, setGrowZone] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [scheduleLabel, setScheduleLabel] = useState('');
     const [schedule, setSchedule] = useState('data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=');
 
     const handleInputChange = (e) => {
@@ -35,6 +36,8 @@ export default function Schedule() {
         if (!validateZip(zipCode)) {
             setErrorMessage('Zipcode must be five numbers');
             setGrowZone('');
+            setScheduleLabel('');
+            setSchedule('data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=');
             // We want to exit out of this code block if something is wrong so that the user can correct it
             return;
         }
@@ -47,6 +50,7 @@ export default function Schedule() {
         setGrowZone(result.zone);
         setZipCode('');
         setErrorMessage('');
+        setScheduleLabel('Here is the planting schedule for your zone:');
 
         if (growZone.startsWith(9)) {
             setSchedule(zone9);
@@ -58,16 +62,16 @@ export default function Schedule() {
 
   return (
     <>
-        <h1 className='page-title'>Find Your Growing Zone</h1>
+        <h1 className='page-title'>Find your planting schedule</h1>
         <p className='zone-description'>
             The 2012 USDA Plant Hardiness Zone Map is the standard by which gardeners and growers can determine which plants are most likely to thrive at a location. The map is based on the average annual minimum winter temperature, divided into 10-degree F zones.
         </p>
         <div className='hardiness-wrap'>
-            <img src={hardinessIMG} alt='hardiness zones' style={{width: '70%', minHeight: '350px', minWidth: '525px'}}></img>
-            <img src={hardinessLegend} alt='hardiness legend' style={{width: '115px', height: '350px'}}></img>
+            <img src={hardinessIMG} alt='hardiness zones' className='hardiness-map'></img>
+            <img src={hardinessLegend} alt='hardiness legend' className='hardiness-legend'></img>
         </div>
         <div className='inputContainer'>
-            <label className='input-label'> Find your growing zone by entering your zip code below</label>
+            <label className='input-label'>Enter your zipcode to discover a planting schedule based on your Growing Zone</label>
             <form className='zip-form'>
                 <input 
                     value={zipCode}
@@ -89,8 +93,9 @@ export default function Schedule() {
         </div>
         <div className='resultsContainer'> 
             <h2 className='results-label'>Your growing zone is: {growZone}</h2>
+            <h3 className='schedule-label'>{scheduleLabel}</h3>
         </div>
-        <div className='scheduleContainer'> 
+        <div className='schedule-container'> 
             <img className='schedule-img' alt='planting schedule' src={schedule}></img>
         </div>
     </>
