@@ -3,6 +3,11 @@
     padding: 20px 0 0 0;
     color: var(--green);
 }
+.zone-description {
+    width: 80%;
+    margin: 0;
+    padding: 10px 0 20px 0;
+}
 .hardiness-wrap {
     width: 100%;
     height: fit-content;

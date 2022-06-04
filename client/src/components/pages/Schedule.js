@@ -50,8 +50,11 @@ export default function Schedule() {
 
 
   return (
-    <div>
+    <>
         <h1 className='page-title'>Find Your Growing Zone</h1>
+        <p className='zone-description'>
+            The 2012 USDA Plant Hardiness Zone Map is the standard by which gardeners and growers can determine which plants are most likely to thrive at a location. The map is based on the average annual minimum winter temperature, divided into 10-degree F zones.
+        </p>
         <div className='hardiness-wrap'>
             <img src={hardinessIMG} alt='hardiness zones' style={{width: '70%', minHeight: '350px', minWidth: '525px'}}></img>
             <img src={hardinessLegend} alt='hardiness legend' style={{width: '115px', height: '350px'}}></img>
@@ -81,6 +84,6 @@ export default function Schedule() {
             <h2>Your growing zone is: {growZone}</h2>
         
         </div>
-    </div>
+    </>
   );
 }
