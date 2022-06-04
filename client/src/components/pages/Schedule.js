@@ -3,6 +3,8 @@ import './styles/schedule.css';
 import { validateZip } from '../../utils/helpers';
 import hardinessIMG from './images/hardiness.jpeg';
 import hardinessLegend from './images/hardinessLegend.jpeg';
+import zone9 from './images/zone-9.jpg';
+import zone10 from './images/zone-10.jpg';
 
 
 export default function Schedule() {
@@ -10,8 +12,7 @@ export default function Schedule() {
     const [zipCode, setZipCode] = useState('');
     const [growZone, setGrowZone] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-
-
+    const [schedule, setSchedule] = useState('data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=');
 
     const handleInputChange = (e) => {
         const { target } = e;
@@ -46,6 +47,11 @@ export default function Schedule() {
         setGrowZone(result.zone);
         setZipCode('');
         setErrorMessage('');
+
+        if (growZone.startsWith(9)) {
+            setSchedule(zone9);
+        }
+        setSchedule(zone10);
       };
 
 
@@ -83,7 +89,9 @@ export default function Schedule() {
         </div>
         <div className='resultsContainer'> 
             <h2 className='results-label'>Your growing zone is: {growZone}</h2>
-        
+        </div>
+        <div className='scheduleContainer'> 
+            <img className='schedule-img' alt='planting schedule' src={schedule}></img>
         </div>
     </>
   );
