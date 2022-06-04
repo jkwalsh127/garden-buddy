@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const {
-  getSingleSchedule,
-} = require('../../controllers/scheduleController');
+  getGardens,
+} = require('../../controllers/gardenController');
 
-// /api/schedule/:scheduleId
-router.route('/:scheduleId').get(getSingleSchedule);
+// /api/gardens
+router.route('/').get(getGardens);
 
 module.exports = router;
