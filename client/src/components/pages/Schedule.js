@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import './styles/schedule.css';
+import { validateZip } from '../../utils/helpers';
 
 export default function Schedule() {
 
     const [zipCode, setZipCode] = useState('');
     const [growZone, setGrowZone] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+
 
 
     const handleInputChange = (e) => {
@@ -25,6 +28,12 @@ export default function Schedule() {
         // Prevent page refresh
         e.preventDefault();
 
+        if (!validateZip(zipCode)) {
+            setErrorMessage('Zipcode must be 5 numbers');
+            // We want to exit out of this code block if something is wrong so that the user can correct it
+            return;
+        }
+
         let result = await fetchZone(zipCode);
 
         console.log(result.zone);
@@ -32,6 +41,7 @@ export default function Schedule() {
 
         setGrowZone(result.zone);
         setZipCode('');
+        setErrorMessage('');
       };
 
 
@@ -42,6 +52,11 @@ export default function Schedule() {
         <div className='inputContainer'>
             <label> Find your growing zone by entering your zip code below: </label>
             <form>
+                {errorMessage && (
+                    <div>
+                        <p className="error-text">{errorMessage}</p>
+                    </div>
+                )}
                 <input 
                     value={zipCode}
                     name='zipCode'
