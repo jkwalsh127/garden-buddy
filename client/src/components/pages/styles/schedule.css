@@ -1,0 +1,12 @@
+.error-div {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-text {
+    color: red;
+    margin: 0;
+    font-weight: 600;
+}

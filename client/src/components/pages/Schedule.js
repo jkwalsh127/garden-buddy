@@ -29,7 +29,7 @@ export default function Schedule() {
         e.preventDefault();
 
         if (!validateZip(zipCode)) {
-            setErrorMessage('Zipcode must be 5 numbers');
+            setErrorMessage('Zipcode must be five numbers');
             // We want to exit out of this code block if something is wrong so that the user can correct it
             return;
         }
@@ -52,11 +52,13 @@ export default function Schedule() {
         <div className='inputContainer'>
             <label> Find your growing zone by entering your zip code below: </label>
             <form>
-                {errorMessage && (
-                    <div>
-                        <p className="error-text">{errorMessage}</p>
-                    </div>
-                )}
+                <div className='error-div'>
+                    {errorMessage && (
+                        <div>
+                            <p className="error-text">{errorMessage}</p>
+                        </div>
+                    )}
+                </div>
                 <input 
                     value={zipCode}
                     name='zipCode'
