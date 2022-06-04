@@ -30,7 +30,7 @@ const Header = () => {
             <NavLink style={navLinkStyles} className="nav-link" to="/findzone">
               Find Zone
             </NavLink>
-            <NavLink style={navLinkStyles} className="nav-link" to="/profile">
+            <NavLink style={navLinkStyles} className="nav-link" to="/myprofile">
               View Profile
             </NavLink>
           </>

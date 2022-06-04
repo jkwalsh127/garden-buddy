@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Schedule from './components/pages/Schedule';
 import Header from './components/Header';
+import Schedule from './components/pages/Schedule';
+import Profile from './components/pages/Profile';
 
 function App() {
   return (
@@ -14,6 +15,10 @@ function App() {
               <Route 
                   path="/findzone" 
                   element={<Schedule />}
+              />
+              <Route 
+                  path="/myprofile" 
+                  element={<Profile />}
               />
             </Routes>
           </div>

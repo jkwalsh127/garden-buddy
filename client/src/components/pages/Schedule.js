@@ -62,7 +62,7 @@ export default function Schedule() {
 
   return (
     <>
-        <h1 className='page-title'>Find your planting schedule</h1>
+        <h1 className='page-title'>Find my planting schedule</h1>
         <p className='zone-description'>
             The 2012 USDA Plant Hardiness Zone Map is the standard by which gardeners and growers can determine which plants are most likely to thrive at a location. The map is based on the average annual minimum winter temperature, divided into 10-degree F zones.
         </p>
