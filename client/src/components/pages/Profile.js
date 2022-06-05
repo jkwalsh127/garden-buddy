@@ -11,10 +11,8 @@ import { QUERY_GARDENS } from '../../utils/queries';
 
 const Profile = () => {
     const { loading, data } = useQuery(QUERY_GARDENS);
-    console.log(data);
 
     const gardenList = data?.garden || [];
-    console.log(data.garden);
     console.log(gardenList);
     // queryDB();
 
