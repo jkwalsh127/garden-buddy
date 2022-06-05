@@ -40,7 +40,7 @@ export const postDb = async (vegetable, variety, startedAs, sowDate, plantDate, 
 // Export a function we will use to GET to the database.
 export const getDb = async () => {
   console.log('GET from the database');
-
+  
   // Create a connection to the database database and version we want to use.
   const gardenDb = await openDB('garden', 1);
 
