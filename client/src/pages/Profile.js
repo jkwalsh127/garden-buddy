@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/profile.css';
 // import { getDb } from '../../database';
 import { useQuery } from '@apollo/client';
-import { QUERY_GARDENS } from '../../utils/queries';
+import { QUERY_GARDENS } from '../utils/queries';
 // import { CREATE_GARDEN } from '../../utils/mutations';
 
 // const queryDB = async () => {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './styles/schedule.css';
-import { validateZip } from '../../utils/helpers';
+import { validateZip } from '../utils/helpers';
 import hardinessIMG from './images/hardiness.jpeg';
 import hardinessLegend from './images/hardinessLegend.jpeg';
 import zone3 from './images/zone-3.jpg';

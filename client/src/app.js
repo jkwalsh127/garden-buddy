@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { setContext } from '@apollo/client/link/context';
 import './App.css';
 import Header from './components/Header';
-import Schedule from './components/pages/Schedule';
-import Profile from './components/pages/Profile';
-import Landing from './components/pages/Landing';
+import Schedule from './pages/Schedule';
+import Profile from './pages/Profile';
+import Landing from './pages/Landing';
 
 // const client = new ApolloClient({
 //   uri: '/graphql',
