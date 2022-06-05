@@ -2,8 +2,9 @@ const { Garden, User } = require('../models');
 
 const resolvers = {
   Query: {
-    garden: async () => {
-      return Garden.find({});
+    gardens: async (parent, { _id }) => {
+      const params = _id ? { _id } : {};
+      return Garden.find(params);
     },
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate('gardens');

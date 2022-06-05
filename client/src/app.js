@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Schedule from './pages/Schedule';
 import Profile from './pages/Profile';
 import Landing from './pages/Landing';
+import Guides from './pages/Guides';
 
 // const client = new ApolloClient({
 //   uri: '/graphql',
@@ -49,6 +50,10 @@ function App() {
                 <Route 
                     path="/findzone" 
                     element={<Schedule />}
+                />
+                <Route 
+                    path="/guides" 
+                    element={<Guides />}
                 />
                 <Route 
                     path="/myprofile" 

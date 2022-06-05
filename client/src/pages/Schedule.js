@@ -51,7 +51,6 @@ export default function Schedule() {
         let result = await fetchZone(zipCode);
 
         console.log(result.zone);
-        console.log(typeof result.zone);
 
         setGrowZone(result.zone);
         setZipCode('');
