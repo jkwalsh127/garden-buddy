@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './styles/profile.css';
-import { useMutation, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { QUERY_GARDENS } from '../../utils/queries';
+// import { CREATE_GARDEN } from '../../utils/mutations';
+
 
 const Profile = () => {
     const { loading, data } = useQuery(QUERY_GARDENS);

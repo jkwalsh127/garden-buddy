@@ -2,6 +2,7 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
   type Garden {
+    _id: ID!
     vegetable: String!
     variety: String
     startedAs: String
@@ -17,7 +18,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    createGarden(vegetable: String!): Garden
+    createGarden(vegetable: String!, variety: String, startedAs: String, sowDate: String, plantDate: String, firstHarvest: String, lastHarvest: String, notes: String): Garden
+  }
 `;
 
 module.exports = typeDefs;
