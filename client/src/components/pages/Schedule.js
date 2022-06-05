@@ -3,6 +3,12 @@ import './styles/schedule.css';
 import { validateZip } from '../../utils/helpers';
 import hardinessIMG from './images/hardiness.jpeg';
 import hardinessLegend from './images/hardinessLegend.jpeg';
+import zone3 from './images/zone-3.jpg';
+import zone4 from './images/zone-4.jpg';
+import zone5 from './images/zone-5.jpg';
+import zone6 from './images/zone-6.jpg';
+import zone7 from './images/zone-7.jpg';
+import zone8 from './images/zone-8.jpg';
 import zone9 from './images/zone-9.jpg';
 import zone10 from './images/zone-10.jpg';
 
@@ -52,10 +58,23 @@ export default function Schedule() {
         setErrorMessage('');
         setScheduleLabel('Here is the planting schedule for your zone:');
 
-        if (growZone.startsWith(9)) {
+        if (growZone.startsWith(3)) {
+            setSchedule(zone3);
+        } else if (growZone.startsWith(4)) {
+            setSchedule(zone4);
+        } else if (growZone.startsWith(5)) {
+            setSchedule(zone5);
+        } else if (growZone.startsWith(6)) {
+            setSchedule(zone6);
+        } else if (growZone.startsWith(7)) {
+            setSchedule(zone7);
+        } else if (growZone.startsWith(8)) {
+            setSchedule(zone8);
+        } else if (growZone.startsWith(9)) {
             setSchedule(zone9);
-        }
+        } else {
         setSchedule(zone10);
+        }
       };
 
 
