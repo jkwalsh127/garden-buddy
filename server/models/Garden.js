@@ -27,9 +27,9 @@ const gardenSchema = new Schema(
     notes: {
       type: String,
     }
-  },
+  }
 );
 
-const Garden = model('garden', gardenSchema);
+const Garden = model('Garden', gardenSchema);
 
 module.exports = Garden;
