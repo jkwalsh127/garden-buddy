@@ -1,13 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/profile.css';
+import { useMutation, useQuery } from '@apollo/client';
+import { QUERY_GARDENS } from '../../utils/queries';
 
-export default function Schedule() {
+const Profile = () => {
+    const { loading, data } = useQuery(QUERY_GARDENS);
 
-
+    const gardenList = data?.garden || [];
+    console.log(gardenList);
 
     return (
-        <>
-            <h1 className='page-title'>My Gardens</h1>
-        </>
-    );
-}
+        <div className=''>
+          <h1 className='page-title'>My Gardens</h1>
+          <div className=''>
+            {loading ? (
+              <div>Loading...</div>
+            ) : (
+              <>
+                <label>Tech 1: </label>
+                {gardenList.map((garden) => {
+                  return (
+                    <option key={garden._id}>
+                      {garden.vegetable}
+                    </option>
+                  );
+                })}
+              </>
+            )}
+          </div>
+        </div>
+      );
+    };
+    
+export default Profile;

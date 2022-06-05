@@ -6,6 +6,12 @@ const resolvers = {
       return Garden.find({});
     },
   },
+  Mutation: {
+    createGarden: async (parent, args) => {
+      const garden = await Garden.create(args);
+      return garden;
+    }
+  }
 };
 
 module.exports = resolvers;
