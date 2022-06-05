@@ -4,9 +4,10 @@ const resolvers = {
   Query: {
     garden: async () => {
       return Garden.find({});
-    }
+    },
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate('gardens');
+    }
   },
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
