@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.527e08b0.chunk.css",
+    "main.js": "/static/js/main.acde45fb.chunk.js",
+    "main.js.map": "/static/js/main.acde45fb.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f070b9bc.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f070b9bc.js.map",
+    "static/js/2.65a415c9.chunk.js": "/static/js/2.65a415c9.chunk.js",
+    "static/js/2.65a415c9.chunk.js.map": "/static/js/2.65a415c9.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.527e08b0.chunk.css.map": "/static/css/main.527e08b0.chunk.css.map",
+    "static/js/2.65a415c9.chunk.js.LICENSE.txt": "/static/js/2.65a415c9.chunk.js.LICENSE.txt",
+    "static/media/hardiness.2b72ceec.jpeg": "/static/media/hardiness.2b72ceec.jpeg",
+    "static/media/hardinessLegend.fe4c914e.jpeg": "/static/media/hardinessLegend.fe4c914e.jpeg",
+    "static/media/zone-10.4af278cb.jpg": "/static/media/zone-10.4af278cb.jpg",
+    "static/media/zone-9.311688a5.jpg": "/static/media/zone-9.311688a5.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f070b9bc.js",
+    "static/js/2.65a415c9.chunk.js",
+    "static/css/main.527e08b0.chunk.css",
+    "static/js/main.acde45fb.chunk.js"
+  ]
+}
