@@ -1,0 +1,79 @@
+.page-title {
+    margin: 0;
+    padding: 20px 0 0 0;
+    color: var(--green);
+}
+.zone-description {
+    width: 80%;
+    margin: 0;
+    padding: 10px 0 20px 0;
+}
+.hardiness-wrap {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 20px 0;
+}
+.hardiness-map {
+    width: 70%;
+    min-height: 350px; 
+    min-width: 525px;
+}
+.hardiness-legend {
+    width: 15%;
+    min-width: 115px; 
+    min-height: 350px;
+}
+.zip-input {
+    height: 22px;
+}
+.submit-btn {
+    background-color: var(--brown);
+    border-radius: 3px;
+    border: 1px solid var(--light-white);
+    color: var(--light-white);
+    height: 30px;
+    width: 80px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 0 10px;
+}
+.input-label {
+    margin: 0 0 10px 0;
+}
+.zip-form {
+    margin: 10px 0 0 0;
+}
+.error-div {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0 0 0;
+}
+
+.error-text {
+    color: red;
+    margin: 0;
+    font-weight: 600;
+}
+.results-label {
+    margin: 0px;
+}
+.schedule-label {
+    margin: 10px 0 0 0;
+}
+.schedule-container {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 20px 0;
+    height: fit-content;
+}
+.schedule-img {
+    width: 80%;
+}

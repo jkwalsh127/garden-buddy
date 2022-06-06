@@ -1,0 +1,35 @@
+/* Custom Variables */
+* {
+  --green: #808c6c;
+  --brown: 	#c37857; 
+  --dark-white: #e3dfc8;
+  --light-white: #f5f1da;
+  --orange: #fdac61;
+}
+
+.App {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--light-white);
+}
+
+.outer-container {
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  background-color: var(--light-white);
+  display: flex;
+  justify-content: center;
+}
+.inner-container {
+  width: 80%;
+  min-height: 100vh;
+  height: 100%;
+  background-color: var(--dark-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
