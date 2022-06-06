@@ -1,34 +1,43 @@
 const { Schema, model } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
-const gardenSchema = new Schema(
-  {
-    vegetable: {
-      type: String,
-      required: true,
-    },
-    variety: {
-      type: String,
-    },
+const gardenSchema = new Schema ({
+    vegetable: { 
+        type: String, 
+        required: true, 
+    }, 
+    variety: { 
+        type: String, 
+        required: true,
+    }, 
     startedAs: {
-      type: String,
-    },
+        type: String, 
+        required: true, 
+    }, 
     sowDate: {
-      type: String,
+        type: Number, 
+        default: Date.now,
+        get: (timestamp) => dateFormat(timestamp),
     },
     plantDate: {
-      type: String,
-    },
+        type: Number, 
+        default: Date.now,
+        get: (timestamp) => dateFormat(timestamp),
+    }, 
     firstHarvest: {
-      type: String,
-    },
+        type: Number, 
+        default: Date.now,
+        get: (timestamp) => dateFormat(timestamp),
+    }, 
     lastHarvest: {
-      type: String,
+        type: Number, 
+        default: Date.now,
+        get: (timestamp) => dateFormat(timestamp),
     },
-    notes: {
-      type: String,
-    }
-  }
-);
+    noteText: { 
+        type: String, 
+    }, 
+});
 
 const Garden = model('Garden', gardenSchema);
 

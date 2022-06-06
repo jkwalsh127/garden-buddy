@@ -10,9 +10,7 @@ import { QUERY_GARDENS } from '../utils/queries';
 // }
 
 const Profile = () => {
-    const { loading, data } = useQuery(QUERY_GARDENS, {
-      fetchPolicy: "no-cache"
-    });
+    const { loading, data } = useQuery(QUERY_GARDENS);
     const gardenList = data?.gardens || [];
     console.log(gardenList);
     // queryDB();
