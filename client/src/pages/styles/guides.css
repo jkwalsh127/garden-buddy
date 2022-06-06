@@ -8,9 +8,13 @@
     width: 20%;
     max-width: 200px;
     background-color: var(--dark-white);
+    display: flex;
+    justify-content: center;
 }
 .veggie-list {
     list-style: none;
+    padding: 0 5px;
+    background-color: var(--light-white);
 }
 .list-title {
     font-size: 24px;
@@ -27,9 +31,7 @@
     color: var(--green);
 }
 .guide-wrap {
-    width: 75%;
-    margin: 0 2.5% 0 2.5%;
-    background-color: var(--light-white);
+    width: 80%;
     display: flex;
 }
 .detail-wrap {
@@ -38,12 +40,11 @@
     padding: 0;
     display: flex;
     align-items: center;
-    padding: 0 0 0 10px;
 }
 .detail-list {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 10px 0 0 0;
 }
 .detail-label {
     font-weight: 700;
