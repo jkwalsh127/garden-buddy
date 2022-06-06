@@ -8,7 +8,7 @@ import { QUERY_GARDENS } from '../utils/queries';
 const Profile = () => {
     const { loading, data } = useQuery(QUERY_GARDENS);
     const gardenList = data?.gardens || [];
-    console.log(gardenList);
+    console.log(data);
 
     return (
       <div className=''>
@@ -19,13 +19,14 @@ const Profile = () => {
           ) : (
           <div>
             <label>Garden 1: </label>
-            {gardenList.map((garden) => {
+            {data?.gardens.map((garden) => {
               return (
                 <option key={garden._id} value={garden.vegetable}>
                   {garden.vegetable}
                 </option>
               );
             })}
+            
           </div>
           )}
         </div>
