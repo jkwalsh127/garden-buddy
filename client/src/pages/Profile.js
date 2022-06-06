@@ -5,15 +5,10 @@ import { useQuery } from '@apollo/client';
 import { QUERY_GARDENS } from '../utils/queries';
 // import { CREATE_GARDEN } from '../../utils/mutations';
 
-// const queryDB = async () => {
-//   await getDb();
-// }
-
 const Profile = () => {
     const { loading, data } = useQuery(QUERY_GARDENS);
     const gardenList = data?.gardens || [];
     console.log(gardenList);
-    // queryDB();
 
     return (
       <div className=''>
@@ -22,7 +17,16 @@ const Profile = () => {
         {loading ? (
         <div>Loading...</div>
           ) : (
-          <label>Garden 1: </label>
+          <div>
+            <label>Garden 1: </label>
+            {gardenList.map((garden) => {
+              return (
+                <option key={garden._id} value={garden.vegetable}>
+                  {garden.vegetable}
+                </option>
+              );
+            })}
+          </div>
           )}
         </div>
       </div>
