@@ -57,19 +57,19 @@ export default function Schedule() {
         setErrorMessage('');
         setScheduleLabel('Here is the planting schedule for your zone:');
 
-        if (growZone.startsWith(3)) {
+        if (growZone.includes(3)) {
             setSchedule(zone3);
-        } else if (growZone.startsWith(4)) {
+        } else if (growZone.includes(4)) {
             setSchedule(zone4);
-        } else if (growZone.startsWith(5)) {
+        } else if (growZone.includes(5)) {
             setSchedule(zone5);
-        } else if (growZone.startsWith(6)) {
+        } else if (growZone.includes(6)) {
             setSchedule(zone6);
-        } else if (growZone.startsWith(7)) {
+        } else if (growZone.includes(7)) {
             setSchedule(zone7);
-        } else if (growZone.startsWith(8)) {
+        } else if (growZone.includes(8)) {
             setSchedule(zone8);
-        } else if (growZone.startsWith(9)) {
+        } else if (growZone.includes(9)) {
             setSchedule(zone9);
         } else {
         setSchedule(zone10);

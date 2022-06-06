@@ -16,18 +16,17 @@ const Profile = () => {
     // queryDB();
 
     return (
+      <div className=''>
+        <h1 className='page-title'>My Gardens</h1>
         <div className=''>
-          <h1 className='page-title'>My Gardens</h1>
-          <div className=''>
-          {loading ? (
-          <div>Loading...</div>
-            ) : (
-            <label>Tech 1: </label>
-                )
-          }  
-          </div>
+        {loading ? (
+        <div>Loading...</div>
+          ) : (
+          <label>Garden 1: </label>
+          )}
         </div>
-      );
-    };
+      </div>
+    );
+  };
 
 export default Profile;
