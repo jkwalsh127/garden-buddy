@@ -1,5 +1,7 @@
-import React from 'react';
-import './styles/profile.css';
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+import './styles/gardens.css';
 // import { getDb } from '../../database';
 import { useQuery } from '@apollo/client';
 import { QUERY_GARDENS } from '../utils/queries';
@@ -7,8 +9,22 @@ import { QUERY_GARDENS } from '../utils/queries';
 
 const Profile = () => {
     const { loading, data } = useQuery(QUERY_GARDENS);
-    const gardenList = data?.gardens || [];
+    // const gardenList = data?.gardens || [];
     console.log(data);
+
+    const [sowDate, setSowDate] = useState(new Date());
+    const [plantDate, setPlantDate] = useState(new Date());
+    const [firstHarvest, setFirstHarvest] = useState(new Date());
+    const [lastHarvest, setLastHarvest] = useState(new Date());
+
+    const handleCreateGarden = (e) => {
+      e.preventDefault();
+
+      console.log(sowDate);
+      console.log(plantDate);
+      console.log(firstHarvest);
+      console.log(lastHarvest);
+    };
 
     return (
       <div className=''>
@@ -30,6 +46,48 @@ const Profile = () => {
           </div>
           )}
         </div>
+
+        <form onSubmit={handleCreateGarden}>
+          <div className="form-group">
+            <div className='field-wrap'>
+              <label className='input-label'>Select sowing date</label>
+              <DatePicker 
+                className='field'
+                selected={sowDate} 
+                onChange={setSowDate}
+                dateFormat='MMMM dd yyyy'
+              />
+            </div>
+            <div className='field-wrap'>
+              <label className='input-label'>Select planting date</label>
+              <DatePicker
+                className='field'
+                selected={plantDate} 
+                onChange={setPlantDate}
+                dateFormat='MMMM dd yyyy'
+              />
+            </div>
+            <div className='field-wrap'>
+              <label className='input-label'>Select date of first harvest</label>
+              <DatePicker
+                className='field'
+                selected={firstHarvest} 
+                onChange={setFirstHarvest}
+                dateFormat='MMMM dd yyyy'
+              />
+            </div>
+            <div className='field-wrap'>
+              <label className='input-label'>Select date of last harvest</label>
+              <DatePicker
+                className='field'
+                selected={lastHarvest} 
+                onChange={setLastHarvest}
+                dateFormat='MMMM dd yyyy'
+              />
+            </div>
+            <button className="btn btn-primary">Submit</button>
+          </div>
+        </form>
       </div>
     );
   };
