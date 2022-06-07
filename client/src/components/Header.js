@@ -33,7 +33,7 @@ const Header = () => {
             <NavLink style={navLinkStyles} className="nav-link" to="/guides">
               Grow Guides
             </NavLink>
-            <NavLink style={navLinkStyles} className="nav-link" to="/myprofile">
+            <NavLink style={navLinkStyles} className="nav-link" to="/gardens">
               View Profile
             </NavLink>
           </>

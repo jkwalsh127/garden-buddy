@@ -5,7 +5,7 @@ import { setContext } from '@apollo/client/link/context';
 import './App.css';
 import Header from './components/Header';
 import Schedule from './pages/Schedule';
-import Profile from './pages/Profile';
+import Gardens from './pages/Gardens';
 import Landing from './pages/Landing';
 import Guides from './pages/Guides';
 import Signup from './pages/Signup';
@@ -67,7 +67,7 @@ function App() {
                 />
                 <Route 
                     path="/gardens" 
-                    element={<Profile />}
+                    element={<Gardens />}
                 />
               </Routes>
             </div>
