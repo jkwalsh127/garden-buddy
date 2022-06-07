@@ -4,22 +4,22 @@ import { Row, Col, Button } from 'react-bootstrap';
 
 export default function Landing() {
     return (
-        <>
+        <div>
             <h1 className='page-title'>Welcome to Garden Buddy!</h1>
             <Row>
-                <Col xs={{ span: 10, offset: 1 }} md={{ span: 7, offset: 1 }}>
+                <Col xs={{ span: 10, offset: 2 }} md={{ span: 7, offset: 2 }}>
                     <p className="about-text">
                        Your one-stop-shop for all things gardening! 
                     </p>
                 </Col>
                 <a href="https://react.school" target="_blank" rel="noreferrer">
-                    <Button>Login</Button>
+                    <Button id="button">Login</Button>
                 </a>
                
                 <a href="https://react.school" target="_blank" rel="noreferrer">
-                    <Button>Signup</Button>
+                    <Button id="button">Signup</Button>
                 </a>
             </Row>
-        </>
+        </div>
     );
 }
