@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/landing.css';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 
 export default function Landing() {
     return (
@@ -12,7 +12,11 @@ export default function Landing() {
                        Your one-stop-shop for all things gardening! 
                     </p>
                 </Col>
-        </Row>
+                <a href="https://react.school" target="_blank" rel="noreferrer">
+                    <Button>Login</Button>
+                </a>
+               
+            </Row>
         </>
     );
 }
