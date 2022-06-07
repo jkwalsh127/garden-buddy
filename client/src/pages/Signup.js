@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
-import Auth from '../utils/auth';
+import auth from '../utils/auth';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -34,7 +34,7 @@ const Signup = () => {
         variables: { ...formState },
       });
 
-      Auth.login(data.addUser.token);
+      auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
     }
@@ -48,8 +48,8 @@ const Signup = () => {
           <div className="card-body">
             {data ? (
               <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
+                Success! You may now access{' '}
+                <Link to="/">Garden Buddy.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
@@ -81,6 +81,7 @@ const Signup = () => {
                   className="btn btn-block btn-info"
                   style={{ cursor: 'pointer' }}
                   type="submit"
+                  to="/gardens"
                 >
                   Submit
                 </button>

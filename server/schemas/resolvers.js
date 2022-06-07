@@ -7,8 +7,8 @@ const resolvers = {
       console.log(gardens);
       return gardens;
     },
-    user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('gardens');
+    user: async (parent, { email }) => {
+      return User.findOne({ email }).populate('gardens');
     }
   },
   Mutation: {
