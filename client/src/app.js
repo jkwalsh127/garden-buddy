@@ -8,6 +8,8 @@ import Schedule from './pages/Schedule';
 import Profile from './pages/Profile';
 import Landing from './pages/Landing';
 import Guides from './pages/Guides';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
 
 // const client = new ApolloClient({
 //   uri: '/graphql',
@@ -43,9 +45,17 @@ function App() {
           <div className='outer-container'>
             <div className='inner-container'>
               <Routes>
+                <Route
+                  path="/"
+                  element={<Landing />}
+                />
                 <Route 
-                    path="/" 
-                    element={<Landing />}
+                    path="/login" 
+                    element={<Login />}
+                />
+                <Route 
+                path="/signup" 
+                element={<Signup />}
                 />
                 <Route 
                     path="/findzone" 
@@ -56,7 +66,7 @@ function App() {
                     element={<Guides />}
                 />
                 <Route 
-                    path="/myprofile" 
+                    path="/gardens" 
                     element={<Profile />}
                 />
               </Routes>
