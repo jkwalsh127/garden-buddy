@@ -16,6 +16,9 @@ export default function Landing() {
                     <Button>Login</Button>
                 </a>
                
+                <a href="https://react.school" target="_blank" rel="noreferrer">
+                    <Button>Signup</Button>
+                </a>
             </Row>
         </>
     );
