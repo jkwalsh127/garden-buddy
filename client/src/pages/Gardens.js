@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Modal, Button} from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import './styles/gardens.css';
@@ -11,6 +13,10 @@ const Profile = () => {
     const { loading, data } = useQuery(QUERY_GARDENS);
     // const gardenList = data?.gardens || [];
     console.log(data);
+
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const [sowDate, setSowDate] = useState(new Date());
     const [plantDate, setPlantDate] = useState(new Date());
@@ -25,6 +31,8 @@ const Profile = () => {
       console.log(firstHarvest);
       console.log(lastHarvest);
     };
+
+
 
     return (
       <div className=''>
@@ -47,47 +55,68 @@ const Profile = () => {
           )}
         </div>
 
-        <form onSubmit={handleCreateGarden}>
-          <div className="form-group">
-            <div className='field-wrap'>
-              <label className='input-label'>Select sowing date</label>
-              <DatePicker 
-                className='field'
-                selected={sowDate} 
-                onChange={setSowDate}
-                dateFormat='MMMM dd yyyy'
-              />
+
+        <Button className="nextButton" onClick={handleShow}>
+          Open Modal
+        </Button>
+        <Modal className="modal-dialog modal-dialog-centered modal-dialog-scrollable" show={show}>
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">Modal title</h5>
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={handleClose}></button>
+              </div>
+              <div className="modal-body">
+                <form onSubmit={handleCreateGarden}>
+                  <div className="form-group">
+                    <div className='field-wrap'>
+                      <label className='input-label'>Select sowing date</label>
+                      <DatePicker 
+                        className='field'
+                        selected={sowDate} 
+                        onChange={setSowDate}
+                        dateFormat='MMMM dd yyyy'
+                      />
+                    </div>
+                    <div className='field-wrap'>
+                      <label className='input-label'>Select planting date</label>
+                      <DatePicker
+                        className='field'
+                        selected={plantDate} 
+                        onChange={setPlantDate}
+                        dateFormat='MMMM dd yyyy'
+                      />
+                    </div>
+                    <div className='field-wrap'>
+                      <label className='input-label'>Select date of first harvest</label>
+                      <DatePicker
+                        className='field'
+                        selected={firstHarvest} 
+                        onChange={setFirstHarvest}
+                        dateFormat='MMMM dd yyyy'
+                      />
+                    </div>
+                    <div className='field-wrap'>
+                      <label className='input-label'>Select date of last harvest</label>
+                      <DatePicker
+                        className='field'
+                        selected={lastHarvest} 
+                        onChange={setLastHarvest}
+                        dateFormat='MMMM dd yyyy'
+                      />
+                    </div>
+                    <button className="btn btn-primary" onClick={handleClose}>Submit</button>
+                  </div>
+                </form>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClose}>Close</button>
+                <button type="button" className="btn btn-primary" onClick={handleClose}>Save changes</button>
+              </div>
             </div>
-            <div className='field-wrap'>
-              <label className='input-label'>Select planting date</label>
-              <DatePicker
-                className='field'
-                selected={plantDate} 
-                onChange={setPlantDate}
-                dateFormat='MMMM dd yyyy'
-              />
-            </div>
-            <div className='field-wrap'>
-              <label className='input-label'>Select date of first harvest</label>
-              <DatePicker
-                className='field'
-                selected={firstHarvest} 
-                onChange={setFirstHarvest}
-                dateFormat='MMMM dd yyyy'
-              />
-            </div>
-            <div className='field-wrap'>
-              <label className='input-label'>Select date of last harvest</label>
-              <DatePicker
-                className='field'
-                selected={lastHarvest} 
-                onChange={setLastHarvest}
-                dateFormat='MMMM dd yyyy'
-              />
-            </div>
-            <button className="btn btn-primary">Submit</button>
           </div>
-        </form>
+        </Modal>
+
       </div>
     );
   };
