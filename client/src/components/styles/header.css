@@ -12,7 +12,11 @@
     margin: 0 0 0 30px;
     font-size: 46px;
     color: var(--light-white);
-
+    text-decoration: none;
+    text-decoration-color: red;
+}
+#app-title {
+    text-decoration: none;
 }
 
 .nav {
