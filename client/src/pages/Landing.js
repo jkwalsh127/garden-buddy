@@ -12,11 +12,11 @@ export default function Landing() {
                        Your one-stop-shop for all things gardening! 
                     </p>
                 </Col>
-                <a href="https://react.school" target="_blank" rel="noreferrer">
+                <a href="/login" rel="noreferrer">
                     <Button id="button">Login</Button>
                 </a>
                
-                <a href="https://react.school" target="_blank" rel="noreferrer">
+                <a href="/signup" rel="noreferrer">
                     <Button id="button">Signup</Button>
                 </a>
             </Row>
