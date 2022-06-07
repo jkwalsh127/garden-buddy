@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <header className="header">
       <Link className="" to="/">
-        <h1 className="app-title">
+        <h1 className="app-title" id='app-title'>
           Garden Buddy
         </h1>
       </Link>

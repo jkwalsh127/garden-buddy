@@ -11,8 +11,8 @@ import { QUERY_GARDENS } from '../utils/queries';
 
 const Profile = () => {
     const { loading, data } = useQuery(QUERY_GARDENS);
-    // const gardenList = data?.gardens || [];
-    console.log(data);
+    const gardenList = data?.gardens || [];
+    // console.log(data);
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -43,10 +43,16 @@ const Profile = () => {
           ) : (
           <div>
             <label>Garden 1: </label>
-            {data?.gardens.map((garden) => {
+            {gardenList.map((garden) => {
               return (
                 <option key={garden._id} value={garden.vegetable}>
                   {garden.vegetable}
+                  {garden.variety}
+                  {garden.sowDate}
+                  {garden.plantDate}
+                  {garden.firstHarvest}
+                  {garden.lastHarvest}
+                  {garden.notes}
                 </option>
               );
             })}
