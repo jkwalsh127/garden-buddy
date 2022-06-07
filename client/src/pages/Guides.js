@@ -1,12 +1,13 @@
 import React from 'react';
 import './styles/guides.css';
 import { Link } from 'react-router-dom';
+import tomato from './images/tomato.jpg';
 
 export default function Guides() {
     return (
         <>
             <h1 className='page-title'>Growing Guides</h1>
-            <h2 className='veggie-title'>Tomatos</h2>
+            <h2 className='veggie-title'>Tomatoes</h2>
             <div className='content-wrap'>
                 <div className='list-wrap'>
                     <ul className='veggie-list'> 
@@ -58,7 +59,7 @@ export default function Guides() {
                         </ul>
                     </div>
                     <div className='description-wrap'>
-                        <img></img>
+                        <img className='veggie-img' src={tomato} alt='tomato plant'></img>
                         <p className='description'>
                             THSSI ISHI HDIHF OSDHFDO ISHF ODIHFSDOIF HDOIHDFO IHFDOID FHODISF. THSS IISH IHD IHFO SDHFDO ISH FODIHFSDOIF HDOIH DFOIH FDOID FHODI SF.THSSIIS HIHD IHFOS DHFDOI SHF ODIHFS DOIFHD OIHDFOI HFDOIDF HODISF. THSSII SHIHD IHFOSD HFDOI SHFODI HFSDO IFHDOI HDFOI HFDOID FHOD ISF.THSSI ISHI HDIH FOSDH FDOISH FODIHF SDOIFH DOIH DFOIHF DOIDFHOD ISF. THSSI ISH IHDIH FOSDHF DOIS HFODIH FSDOIFHD OIHD FOIHFDO IDFHO DISF.
                         </p>

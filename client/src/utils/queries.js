@@ -22,8 +22,8 @@ query user($username: String!) {
 `;
 
 export const QUERY_GARDENS = gql`
-query gardens($_id: String) {
-  gardens(_id: $_id) {
+{
+  gardens {
     _id
     vegetable
     variety
