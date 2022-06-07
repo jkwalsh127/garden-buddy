@@ -21,6 +21,16 @@ query user($username: String!) {
 }
 `;
 
+export const QUERY_USERS = gql`
+{
+  users{ 
+    _id
+    username
+    email
+    password
+  }
+}
+`;
 export const QUERY_GARDENS = gql`
 {
   gardens {
