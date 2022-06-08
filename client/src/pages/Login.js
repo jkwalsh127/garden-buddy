@@ -48,8 +48,8 @@ const Login = (props) => {
           <div className="card-body">
             {data ? (
               <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
+                Success! You may now {' '}
+                <Link to="/gardens">access Garden Buddy.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
@@ -73,6 +73,7 @@ const Login = (props) => {
                   className="btn btn-block btn-info"
                   style={{ cursor: 'pointer' }}
                   type="submit"
+                  to="/gardens"
                 >
                   Submit
                 </button>

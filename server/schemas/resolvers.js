@@ -1,4 +1,5 @@
 const { Garden, User } = require('../models');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
@@ -7,15 +8,26 @@ const resolvers = {
       console.log(gardens);
       return gardens;
     },
-    user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('gardens');
-    }
+    user: async (parent, { email }) => {
+      return User.findOne({ email }).populate('gardens');
+    },
+    users: async () => {
+      const users = User.find()
+      console.log(users);
+      return users;
+    },
   },
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
+      console.log("addUser");
+      try {
+        const user = await User.create({ username, email, password });
       const token = signToken(user);
       return { token, user };
+      }
+      catch (error) {
+        console.log(error);
+      }
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });

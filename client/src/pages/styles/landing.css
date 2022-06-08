@@ -1,0 +1,23 @@
+.row {
+    margin-top: 15px;
+}
+
+
+.about-text {
+    margin-top: 10%;
+    border: 1px solid var(--brown);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 15px 10px 2px 1px rgb(195, 120, 87);
+}
+
+#button { 
+    background-color: var(--orange);
+    color: var(--light-white);
+    font-size: 20px;
+    padding: 10px 60px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    cursor: pointer;
+}
