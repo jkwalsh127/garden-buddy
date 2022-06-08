@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
-import auth from '../utils/auth';
+import Auth from '../utils/auth';
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -28,7 +28,7 @@ const Login = (props) => {
         variables: { ...formState },
       });
 
-      auth.login(data.login.token);
+      Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
     }
@@ -49,7 +49,7 @@ const Login = (props) => {
             {data ? (
               <p>
                 Success! You may now {' '}
-                <Link to="/">access Garden Buddy.</Link>
+                <Link to="/gardens">access Garden Buddy.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
