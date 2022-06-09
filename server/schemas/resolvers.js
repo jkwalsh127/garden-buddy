@@ -60,7 +60,16 @@ const resolvers = {
       ); 
     }
   },
-  
+  removeGarden: async (parent, { vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes }, context) => {
+    if (context.user) {
+      return User.findOneAndUpdate(
+        { _id: context.user._id },
+        { $pull: { gardens: Garden } },
+        { new: true }
+      );
+    }
+    throw new AuthenticationError('You need to be logged in!');
+  },
 };
 
 module.exports = resolvers;
