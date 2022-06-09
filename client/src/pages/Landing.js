@@ -1,11 +1,25 @@
 import React from 'react';
 import './styles/landing.css';
-// import Signup from '../components/signup';
+import { Row, Col, Button } from 'react-bootstrap';
 
-export default function Schedule() {
+export default function Landing() {
     return (
-        <>
-            <h1 className='page-title'>Welcome</h1>
-        </>
+        <div>
+            <h1 className='page-title'>Welcome to Garden Buddy!</h1>
+            <Row>
+                <Col xs={{ span: 10, offset: 2 }} md={{ span: 7, offset: 2 }}>
+                    <p className="about-text">
+                       Your one-stop-shop for all things gardening! 
+                    </p>
+                </Col>
+                <a href="/login" rel="noreferrer">
+                    <Button id="login-button">Login</Button>
+                </a>
+               
+                <a href="/signup" rel="noreferrer">
+                    <Button id="signup-button">Signup</Button>
+                </a>
+            </Row>
+        </div>
     );
 }
