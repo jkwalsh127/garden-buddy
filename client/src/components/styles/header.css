@@ -11,6 +11,7 @@
 .app-title {
     margin: 0 0 0 30px;
     font-size: 46px;
+    font-family: cursive;
     color: var(--light-white);
     text-decoration: none;
     text-decoration-color: red;
