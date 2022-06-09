@@ -1,3 +1,4 @@
+const { AuthenticationError } = require('apollo-server-express');
 const { Garden, User } = require('../models');
 const { signToken } = require('../utils/auth');
 
@@ -45,28 +46,15 @@ const resolvers = {
       return await Garden.create({ vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes });
     }
   }, 
-  updateGarden: async (parent, { userId, vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes }, context) => {
-    if(context.user) {
-  
-      return User.findOneAndUpdate(
-        { _id: userId },
-        {
-          $addToSet: { gardens: Garden },
-        },
-        {
-          new: true, 
-          runValidators: true, 
-        }
-      ); 
+  updateGarden: async (parent, args, context) => {
+    if(context.gardens) {
+      return await Garden.findByIdAndUpdate(context.gardens._id, args, { new: true });
     }
+    throw new AuthenticationError('Not logged in')  
   },
-  removeGarden: async (parent, { vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes }, context) => {
-    if (context.user) {
-      return User.findOneAndUpdate(
-        { _id: context.user._id },
-        { $pull: { gardens: Garden } },
-        { new: true }
-      );
+  removeGarden: async (parent, args , context) => {
+    if (context.gardens) {
+      return Garden.findByIdAndDelete({ _id: context.gardens._id });
     }
     throw new AuthenticationError('You need to be logged in!');
   },
