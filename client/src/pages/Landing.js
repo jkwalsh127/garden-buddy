@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles/landing.css';
-import { Row, Col, Button, ButtonGroup } from 'react-bootstrap';
-
+import { Row, Col, Button } from 'react-bootstrap';
 
 
 export default function Landing() {
