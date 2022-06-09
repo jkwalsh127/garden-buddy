@@ -1,20 +1,10 @@
+
 .row {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 
 .about-text {
-  font-family: italic;
-    margin-top: 10%;
-    border: 1px solid var(--brown);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 15px 10px 2px 1px rgb(195, 120, 87);
-}
-
-.page-title {
-  font-family: oblique;
   margin-top: 10%;
   border: 1px solid var(--brown);
   padding: 20px;
@@ -23,31 +13,21 @@
   box-shadow: 15px 10px 2px 1px rgb(195, 120, 87);
 }
 
-#login-button { 
-    background-color: var(--green);
-    color: var(--light-white);
-    font-size: 20px;
-    padding: 10px 50px;
-    border-radius: 10px;
-    margin: 10px 0px;
-    cursor: pointer;
-}
 
-#signup-button { 
+#button { 
   background-color: var(--green);
   color: var(--light-white);
   font-size: 20px;
   padding: 10px 50px;
-  border-radius: 10px;
+  border-radius: 50%;
   margin: 10px 0px;
   cursor: pointer;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
-#login-button{
-  width: 300px;
-  height: 40px;
+.buttonwrapper {
+  display: flex;
+  align-self: center;
 }
-#signup-button{
-  width: 300px;
-  height: 40px;
-}
+

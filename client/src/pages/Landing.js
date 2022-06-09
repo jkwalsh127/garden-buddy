@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/landing.css';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col, Button, ButtonGroup } from 'react-bootstrap';
 
 export default function Landing() {
     return (
@@ -9,17 +9,19 @@ export default function Landing() {
             <Row>
                 <Col xs={{ span: 10, offset: 2 }} md={{ span: 7, offset: 2 }}>
                     <p className="about-text">
-                       Your one-stop-shop for all things gardening! 
+                        Your one-stop-shop for all things gardening!
                     </p>
                 </Col>
-                <a href="/login" rel="noreferrer">
-                    <Button id="login-button">Login</Button>
-                </a>
-               
-                <a href="/signup" rel="noreferrer">
-                    <Button id="signup-button">Signup</Button>
-                </a>
             </Row>
+            <div className="buttonwrapper">
+                <a href="/login" rel="noreferrer">
+                    <Button id="button">Login</Button>
+                </a>
+
+                <a href="/signup" rel="noreferrer">
+                    <Button id="button">Signup</Button>
+                </a>
+            </div>
         </div>
     );
 }
