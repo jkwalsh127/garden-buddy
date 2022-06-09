@@ -37,8 +37,9 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     createGarden(vegetable: String!, variety: String, startedAs: String, sowDate: String, plantDate: String, firstHarvest: String, lastHarvest: String, notes: String): Garden
     removeGarden: Garden
-    updateGarden(userId: ID!, vegetable: String!, variety: String, startedAs: String, sowDate: String, plantDate: String, firstHarvest: String, lastHarvest: String, notes: String): Garden
+    
   }
 `;
-
+// updateGarden(userId: ID!, vegetable: String!, variety: String, startedAs: String, sowDate: String, plantDate: String, firstHarvest: String, lastHarvest: String, notes: String): Garden
+// removeGarden: Garden
 module.exports = typeDefs;
