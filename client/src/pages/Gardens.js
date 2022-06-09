@@ -8,7 +8,7 @@ import './styles/gardens.css';
 import { useQuery } from '@apollo/client';
 import { QUERY_GARDENS } from '../utils/queries';
 // import { CREATE_GARDEN } from '../../utils/mutations';
-import GardenTable from '../components/GardenTable';
+
 
 const Profile = () => {
     const { loading, data } = useQuery(QUERY_GARDENS);
@@ -43,7 +43,7 @@ const Profile = () => {
         <div>Loading...</div>
           ) : (
           <div>
-            <GardenTable />
+       
             <label>Garden 1: </label>
             {gardenList.map((garden) => {
               return (

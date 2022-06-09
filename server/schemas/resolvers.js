@@ -46,11 +46,9 @@ const resolvers = {
       return await Garden.create({ vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes });
     }
   }, 
-  updateGarden: async (parent, args, context) => {
-    if(context.gardens) {
-      return await Garden.findByIdAndUpdate(context.gardens._id, args, { new: true });
-    }
-    throw new AuthenticationError('Not logged in')  
+  updateGarden: async (_id, args) => {
+   
+      return await Garden.findByIdAndUpdate( { _id: id }, args, { new: true });
   },
   removeGarden: async (parent, args , context) => {
     if (context.gardens) {
