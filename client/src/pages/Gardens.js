@@ -42,21 +42,48 @@ const Profile = () => {
         <div>Loading...</div>
           ) : (
           <div>
-            <label>Garden 1: </label>
-            {gardenList.map((garden) => {
-              return (
-                <option key={garden._id} value={garden.vegetable}>
-                  {garden.vegetable}
-                  {garden.variety}
-                  {garden.sowDate}
-                  {garden.plantDate}
-                  {garden.firstHarvest}
-                  {garden.lastHarvest}
-                  {garden.notes}
-                </option>
-              );
-            })}
-            
+            <table>
+              <thead>
+                <tr>
+                  <th>Vegetable</th>
+                  <th>variety</th>
+                  <th>Sow Date</th>
+                  <th>Plant Date</th>
+                  <th>First Harvest</th>
+                  <th>Last Harvest</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+              {gardenList.map((garden) => {
+                return (
+                  <tr key={garden._id} value={garden.vegetable}>
+                    <td>
+                      {garden.vegetable}
+                    </td>
+                    <td>
+                      {garden.variety}
+                    </td>
+                    <td>
+                      {garden.sowDate}
+                    </td>
+                    <td>
+                      {garden.plantDate}
+                    </td>
+                    <td>
+                      {garden.firstHarvest}
+                    </td>
+                    <td>
+                      {garden.lastHarvest}
+                    </td>
+                    <td>
+                      {garden.notes}
+                    </td>
+                  </tr>
+                );
+              })}
+              </tbody>
+            </table>
           </div>
           )}
         </div>

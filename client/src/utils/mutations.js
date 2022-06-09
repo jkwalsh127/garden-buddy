@@ -42,3 +42,35 @@ mutation createGarden($vegetable: String!, $variety: String, $startedAs: String,
   }
 }
 `;
+
+export const REMOVE_GARDEN = gql`
+    mutation removeGarden ($vegetable: String!, $variety: String, $startedAs: String, $sowDate: String, $plantDate: String, $firstHarvest: String, $lastHarvest: String, $notes: String) {
+        removeGarden(vegetable: $vegetable, variety: $variety, startedAs: $startedAs, sowDate: $sowDate, plantDate: $plantDate, firstHarvest: $firstHarvest, lastHarvest: $lastHarvest, notes: $notes){
+            _id
+            vegetable
+            variety
+            startedAs
+            sowDate
+            plantDate
+            firstHarvest
+            lastHarvest
+            notes
+        }
+    }    
+`;
+
+export const UPDATE_GARDEN = gql`
+    mutation updateGarden($userId: ID!, $vegetable: String!, $variety: String, $startedAs: String, $sowDate: String, $plantDate: String, $firstHarvest: String, $lastHarvest: String, $notes: String) {
+      updateGarden(userId: $userId, vegetable: $vegetable, variety: $variety, startedAs: $startedAs, sowDate: $sowDate, plantDate: $plantDate, firstHarvest: $firstHarvest, lastHarvest: $lastHarvest, notes: $notes) {
+        _id
+        vegetable
+        variety
+        startedAs
+        sowDate
+        plantDate
+        firstHarvest
+        lastHarvest
+        notes
+      }
+    }
+`;
