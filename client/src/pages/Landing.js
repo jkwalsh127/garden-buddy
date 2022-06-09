@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/landing.css';
 import { Row, Col, Button } from 'react-bootstrap';
 import fruits from './images/fruits.jpg';
-import veggies from './images/veggies.jpg'
+import veggies from './images/veggies.jpg';
 
 export default function Landing() {
     return (

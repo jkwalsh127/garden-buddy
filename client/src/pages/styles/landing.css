@@ -5,6 +5,8 @@
 
 .page-title {
   font-family: cursive;
+  font-display: bold;
+  font-size: 50px;
 }
 
 .about-text {
@@ -28,7 +30,7 @@
   margin: 10px 0px;
   cursor: pointer;
   margin-right: 20px;
-  margin-left: 20px;
+  margin-left: 50px;
 }
 
 .buttonwrapper {
