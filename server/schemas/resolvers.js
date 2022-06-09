@@ -44,7 +44,23 @@ const resolvers = {
     createGarden: async (parent, { vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes }) => {
       return await Garden.create({ vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes });
     }
-  }
+  }, 
+  updateGarden: async (parent, { userId, vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes }, context) => {
+    if(context.user) {
+  
+      return User.findOneAndUpdate(
+        { _id: userId },
+        {
+          $addToSet: { gardens: Garden },
+        },
+        {
+          new: true, 
+          runValidators: true, 
+        }
+      ); 
+    }
+  },
+  
 };
 
 module.exports = resolvers;
