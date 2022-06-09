@@ -44,18 +44,18 @@ const resolvers = {
     },
     createGarden: async (parent, { vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes }) => {
       return await Garden.create({ vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes });
-    }
-  }, 
-  updateGarden: async (_id, args) => {
+    },
+    updateGarden: async (_id, args) => {
    
       return await Garden.findByIdAndUpdate( { _id: id }, args, { new: true });
-  },
-  removeGarden: async (parent, args , context) => {
-    if (context.gardens) {
-      return Garden.findByIdAndDelete({ _id: context.gardens._id });
+    },
+    removeGarden: async (parent, args , context) => {
+      if (context.gardens) {
+        return Garden.findByIdAndDelete({ _id: context.gardens._id });
+      }
+      throw new AuthenticationError('You need to be logged in!');
     }
-    throw new AuthenticationError('You need to be logged in!');
-  },
+  }
 };
 
 module.exports = resolvers;

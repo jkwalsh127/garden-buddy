@@ -50,26 +50,24 @@ export default function Schedule() {
 
         let result = await fetchZone(zipCode);
 
-        console.log(result.zone);
-
         setGrowZone(result.zone);
         setZipCode('');
         setErrorMessage('');
         setScheduleLabel('Here is the planting schedule for your zone:');
 
-        if (growZone.includes(3)) {
+        if (result.zone.includes('3')) {
             setSchedule(zone3);
-        } else if (growZone.includes(4)) {
+        } else if (result.zone.includes('4')) {
             setSchedule(zone4);
-        } else if (growZone.includes(5)) {
+        } else if (result.zone.includes('5')) {
             setSchedule(zone5);
-        } else if (growZone.includes(6)) {
+        } else if (result.zone.includes('6')) {
             setSchedule(zone6);
-        } else if (growZone.includes(7)) {
+        } else if (result.zone.includes('7')) {
             setSchedule(zone7);
-        } else if (growZone.includes(8)) {
+        } else if (result.zone.includes('8')) {
             setSchedule(zone8);
-        } else if (growZone.includes(9)) {
+        } else if (result.zone.includes('9')) {
             setSchedule(zone9);
         } else {
         setSchedule(zone10);
