@@ -8,7 +8,10 @@ import './styles/gardens.css';
 import { useQuery } from '@apollo/client';
 import { QUERY_GARDENS } from '../utils/queries';
 // import { CREATE_GARDEN } from '../../utils/mutations';
+<<<<<<< HEAD
 
+=======
+>>>>>>> abc42d3c5d3f1dc66f88a71026dd529a2fdd48ac
 
 const Profile = () => {
     const { loading, data } = useQuery(QUERY_GARDENS);
@@ -43,6 +46,7 @@ const Profile = () => {
         <div>Loading...</div>
           ) : (
           <div>
+<<<<<<< HEAD
        
             <label>Garden 1: </label>
             {gardenList.map((garden) => {
@@ -59,6 +63,50 @@ const Profile = () => {
               );
             })}
             
+=======
+            <table>
+              <thead>
+                <tr>
+                  <th>Vegetable</th>
+                  <th>variety</th>
+                  <th>Sow Date</th>
+                  <th>Plant Date</th>
+                  <th>First Harvest</th>
+                  <th>Last Harvest</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+              {gardenList.map((garden) => {
+                return (
+                  <tr key={garden._id} value={garden.vegetable}>
+                    <td>
+                      {garden.vegetable}
+                    </td>
+                    <td>
+                      {garden.variety}
+                    </td>
+                    <td>
+                      {garden.sowDate}
+                    </td>
+                    <td>
+                      {garden.plantDate}
+                    </td>
+                    <td>
+                      {garden.firstHarvest}
+                    </td>
+                    <td>
+                      {garden.lastHarvest}
+                    </td>
+                    <td>
+                      {garden.notes}
+                    </td>
+                  </tr>
+                );
+              })}
+              </tbody>
+            </table>
+>>>>>>> abc42d3c5d3f1dc66f88a71026dd529a2fdd48ac
           </div>
           )}
         </div>
