@@ -2,9 +2,9 @@
 
 # Collaborators 
 
-Jake Walsh
-Snehita Kolli
-Asika Habib
+Jake Walsh - https://github.com/jkwalsh127
+Snehita Kolli - https://github.com/snehitak20
+Asika Habib - https://github.com/toma95s
 
 # Group Work Technologies Used 🤝 
 
