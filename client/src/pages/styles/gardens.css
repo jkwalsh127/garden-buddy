@@ -1,16 +1,14 @@
-.form-group {
-
+.page-title {
+    padding: 0;
 }
-.field-wrap {
+.title-wrap {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    padding: 0;
 }
-.input-label {
-    width: 200px;
-    text-align: end;
-}
-.field {
-    width: 100px;
-}
-.react-datepicker-wrapper {
-    width: 150px;
+.birds {
+    height: 40px;
+    padding: 0 0 10px 0;
 }

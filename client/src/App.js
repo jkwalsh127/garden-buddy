@@ -10,6 +10,9 @@ import Landing from './pages/Landing';
 import Guides from './pages/Guides';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import herbLeft from './images/herbs-left.png';
+import herbRight from './images/herbs-right.png';
+
 
 // const client = new ApolloClient({
 //   uri: '/graphql',
@@ -70,6 +73,10 @@ function App() {
                     element={<Gardens />}
                 />
               </Routes>
+              <div className='lower-imgs'>
+                <img src={herbLeft} alt="herbs" className='herbs'/>
+                <img src={herbRight} alt="herbs" className='herbs'/>
+              </div>
             </div>
           </div>
         </div>
