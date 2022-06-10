@@ -1,20 +1,15 @@
 import React from 'react';
 import './styles/guides.css';
 import { Link } from 'react-router-dom';
-import vegetables from './images/vegetables.jpg';
-import Beets from '../components/Beets';
-import Tomatoes from '../components/Tomatoes';
-import Eggplants from '../components/Eggplants';
-import Carrots from '../components/Carrots';
-import Asparagus from '../components/Asparagus';
+import eggplant from '../pages/images/eggplant.jpg';
 
-export default function Guides() {
+export default function Eggplants() {
     return (
-        <>
+            <>
             <h1 className='page-title'>Growing Guides</h1>
-            <h2 className='veggie-title'>Check out the guides on how to grow your favorite vegetables!</h2>
+            <h2 className='veggie-title'>Eggplant</h2>
             <div className='content-wrap'>
-                <div className='list-wrap'>
+            <div className='list-wrap'>
                     <ul className='veggie-list'> 
                         <h2 className='list-title'>Vegetables</h2>  
                         <li className='veggie'>
@@ -34,7 +29,7 @@ export default function Guides() {
                         </li>
                     </ul>
                 </div>
-                {/* <div className='guide-wrap'>
+                <div className='guide-wrap'>
                     <div className='detail-wrap'>
                         <ul className='detail-list'>
                             <label className='detail-label'>Sun Exposure</label>
@@ -43,7 +38,7 @@ export default function Guides() {
                             </li>
                             <label className='detail-label'>Soil pH</label>
                             <li className='detail'>
-                                Acidic-Neutral
+                                Acidic, neutral, alkaline
                             </li>
                             <label className='detail-label'>Bloom Time</label>
                             <li className='detail'>
@@ -51,7 +46,7 @@ export default function Guides() {
                             </li>
                             <label className='detail-label'>Days to Harvest</label>
                             <li className='detail'>
-                                60-100
+                                80-100
                             </li>
                             <label className='detail-label'>Recommended Start</label>
                             <li className='detail'>
@@ -62,14 +57,14 @@ export default function Guides() {
                                 1/2"
                             </li>
                         </ul>
-                    </div> */}
+                    </div>
                     <div className='description-wrap'>
-                        <img className='veggie-img' src={vegetables} alt='tomato plant'></img>
+                        <img className='veggie-img' src={eggplant} alt='tomato plant'></img>
                         <p className='description'>
-                            Click any of the links on the left to access the growing guide for that vegetable. 
+                            Eggplants can be used in a variety of ways. 
                         </p>
                     </div>
-                {/* </div> */}
+                </div>
             </div>
         </>
     );

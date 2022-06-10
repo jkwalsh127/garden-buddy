@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-// const dateFormat = require('../utils/dateFormat');
 
 const gardenSchema = new Schema ({
     vegetable: { 
@@ -16,23 +15,15 @@ const gardenSchema = new Schema ({
     }, 
     sowDate: {
         type: String, 
-        default: Date.now,
-        // get: (timestamp) => dateFormat(timestamp),
     },
     plantDate: {
         type: String, 
-        default: Date.now,
-        // get: (timestamp) => dateFormat(timestamp),
     }, 
     firstHarvest: {
         type: String, 
-        default: Date.now,
-        // get: (timestamp) => dateFormat(timestamp),
     }, 
     lastHarvest: {
         type: String, 
-        default: Date.now,
-        // get: (timestamp) => dateFormat(timestamp),
     },
     notes: { 
         type: String, 

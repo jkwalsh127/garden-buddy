@@ -4,31 +4,21 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-    gardens: async () => {
-      const gardens = Garden.find()
-      console.log(gardens);
-      return gardens;
+    users: async () => {
+      return User.find().populate('gardens');
     },
     user: async (parent, { email }) => {
       return User.findOne({ email }).populate('gardens');
     },
-    users: async () => {
-      const users = User.find()
-      console.log(users);
-      return users;
-    },
+    gardens: async () => {
+      return Garden.find();
+    }
   },
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
-      console.log("addUser", username, email, password);
-      try {
-        const user = await User.create({ username, email, password });
+      const user = await User.create({ username, email, password });
       const token = signToken(user);
       return { token, user };
-      }
-      catch (error) {
-        console.log(error);
-      }
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -37,14 +27,32 @@ const resolvers = {
       }
       const correctPw = await user.isCorrectPassword(password);
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError('Incorrect password');
       }
       const token = signToken(user);
       return { token, user };
     },
-    createGarden: async (parent, { vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes }) => {
-      return await Garden.create({ vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes });
+    addGarden: async (parent, { vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes }, context) => {
+      if (context.user) {
+        const garden = await Garden.create({
+          vegetable, 
+          variety, 
+          startedAs, 
+          sowDate, 
+          plantDate, 
+          firstHarvest, 
+          lastHarvest, 
+          notes
+        });
+
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { gardens: garden._id} }
+        );
+
+      return garden;
     }
+    throw new AuthenticationError('You must be logged in to create a new garden!');
   }, 
   // updateGarden: async (parent, { gardenId, vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes }) => {
   //   return Garden.findOneAndUpdate{
@@ -59,13 +67,20 @@ const resolvers = {
   //   }
       // return await Garden.findByIdAndUpdate( { _id: _id }, args, { new: true });
   // },
-  // removeGarden: async (parent, {userId, gardenId} ) => {
-  //   return await User.findOneAndUpdate(
-  //     { _id: userId },
-  //     { $pull: { gardens: { _id: gardenId } } },
-  //     { new: true }
-  //     );
-  //   }  
+  removeGarden: async (parent, { gardenId }, context) => {
+    if (context.user) {
+      const garden = await Garden.findOneAndDelete({ _id: gardenId });
+
+      await User.findOneAndUpdate(
+        { _id: context.user._id },
+        { $pull: { gardens: garden._id } }
+      );
+
+      return garden;
+    }
+    throw new AuthenticationError('You need to be logged in to delete a garden!');
+    }  
+  },
 };
 
 module.exports = resolvers;
