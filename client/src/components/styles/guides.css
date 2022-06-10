@@ -1,0 +1,71 @@
+.content-wrap {
+    display: flex;
+    width: 100%;
+    background-color: var(--dark-white);
+    align-items: center;
+}
+.list-wrap {
+    width: 20%;
+    max-width: 200px;
+    background-color: var(--dark-white);
+    display: flex;
+    justify-content: center;
+}
+.veggie-list {
+    list-style: none;
+    padding: 0 5px;
+    background-color: var(--light-white);
+}
+.list-title {
+    font-size: 24px;
+}
+.veggie {
+    font-size: 20px;
+    font-weight: 300;
+}
+.veggie-link {
+    color: black;
+}
+.veggie-title {
+    margin: 20px 0 10px 0;
+    color: var(--green);
+}
+.guide-wrap {
+    width: 80%;
+    display: flex;
+}
+.detail-wrap {
+    width: 160px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+.detail-list {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0 0 0;
+}
+.detail-label {
+    font-weight: 700;
+    color: var(--green);
+}
+.detail {
+    font-size: 14px;
+    padding: 5px 0 15px 0;
+}
+.description-wrap {
+    max-width: 70%;
+    margin: 0 5% 0 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.veggie-img {
+    width: 80%;
+    padding: 10px 0 0 0;
+}
+.description {
+    word-wrap: normal;
+}

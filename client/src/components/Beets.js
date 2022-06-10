@@ -1,14 +1,9 @@
 import React from 'react';
 import './styles/guides.css';
 import { Link } from 'react-router-dom';
-import tomato from './images/tomato.jpg';
-import Beets from '../components/Beets';
-import Tomatoes from '../components/Tomatoes';
-import Eggplants from '../components/Eggplants';
-import Carrots from '../components/Carrots';
-import Asparagus from '../components/Asparagus';
+import tomato from '../pages/images/tomato.jpg';
 
-export default function Guides() {
+export default function Beets() {
     return (
         <>
             <h1 className='page-title'>Growing Guides</h1>
@@ -18,19 +13,19 @@ export default function Guides() {
                     <ul className='veggie-list'> 
                         <h2 className='list-title'>Vegetables</h2>  
                         <li className='veggie'>
-                            <Link className='veggie-link' to='../components/Asparagus'>Asparagus</Link>
+                            <Link className='veggie-link' to='/guides'>Asparagus</Link>
                         </li>
                         <li className='veggie'>
-                            <Link className='veggie-link' to='../components/Beets'>Beets</Link>
+                            <Link className='veggie-link' to='/guides'>Beets</Link>
                         </li>
                         <li className='veggie'>
-                            <Link className='veggie-link' to='../components/Carrots'>Carrots</Link>
+                            <Link className='veggie-link' to='/guides'>Carrots</Link>
                         </li>
                         <li className='veggie'>
-                            <Link className='veggie-link' to='../components/Eggplants'>Eggplants</Link>
+                            <Link className='veggie-link' to='/guides'>Eggplants</Link>
                         </li>
                         <li className='veggie'>
-                            <Link className='veggie-link' to='../components/Tomatoes'>Tomatoes</Link>
+                            <Link className='veggie-link' to='/guides'>Tomatoes</Link>
                         </li>
                     </ul>
                 </div>
