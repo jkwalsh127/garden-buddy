@@ -17,9 +17,11 @@ const Profile = () => {
         <div className='head-wrap'>
           <img src={tomatoesLeft} alt="birds" className='tomatoes'/>
           <div className='title-wrap-gardens'>
+
             <img src={birdLeft} alt="birds" className='birds'/>
             <h1 className='page-title'>My Gardens</h1>
             <img src={birdRight} alt="tomatoes" className='birds'/>
+
           </div>
           <img src={tomatoesRight} alt="tomatoes" className='tomatoes'/>
         </div>

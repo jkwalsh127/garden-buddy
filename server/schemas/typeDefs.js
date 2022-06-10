@@ -30,6 +30,7 @@ const typeDefs = gql`
     user(email: String): User
     gardens(_id: String): [Garden]
     users: [User]
+    me: User
   }
 
   type Mutation {

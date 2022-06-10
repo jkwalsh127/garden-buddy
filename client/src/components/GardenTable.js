@@ -45,11 +45,11 @@ const GardenTable = () => {
         }
   
         // update me object's cache
-        const { me } = cache.readQuery({ query: QUERY_ME });
-        cache.writeQuery({
-          query: QUERY_ME,
-          data: { me: { ...me, gardens: [...me.gardens, addGarden] } },
-        });
+        // const { me } = cache.readQuery({ query: QUERY_ME });
+        // cache.writeQuery({
+        //   query: QUERY_ME,
+        //   data: { me: { ...me, gardens: [...me.gardens, addGarden] } },
+        // });
       },
     });
 
@@ -73,6 +73,7 @@ const GardenTable = () => {
         setVegetable('');
         setVariety('');
         setNotes('');
+        window.location.reload();
       } catch (err) {
         console.error(err);
       }

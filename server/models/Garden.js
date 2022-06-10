@@ -7,11 +7,9 @@ const gardenSchema = new Schema ({
     }, 
     variety: { 
         type: String, 
-        required: true,
     }, 
     startedAs: {
         type: String, 
-        required: true, 
     }, 
     sowDate: {
         type: String, 
