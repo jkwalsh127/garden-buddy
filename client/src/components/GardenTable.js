@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_GARDENS } from '../utils/queries';
+import { QUERY_ME } from '../utils/queries';
+import { ADD_GARDEN } from '../utils/mutations';
 import './styles/gardentable.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
@@ -19,18 +21,75 @@ const GardenTable = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const [vegetable, setVegetable] = useState('');
+    const [variety, setVariety] = useState('');
+    const [startedAs, setStartedAs] = useState('');
     const [sowDate, setSowDate] = useState(new Date());
     const [plantDate, setPlantDate] = useState(new Date());
     const [firstHarvest, setFirstHarvest] = useState(new Date());
     const [lastHarvest, setLastHarvest] = useState(new Date());
+    const [notes, setNotes] = useState('');
 
-    const handleCreateGarden = (e) => {
+
+    const [addGarden, { error }] = useMutation(ADD_GARDEN, {
+      update(cache, { data: { addGarden } }) {
+        try {
+          const { gardens } = cache.readQuery({ query: QUERY_GARDENS });
+  
+          cache.writeQuery({
+            query: QUERY_GARDENS,
+            data: { gardens: [addGarden, ...gardens] },
+          });
+        } catch (e) {
+          console.error(e);
+        }
+  
+        // update me object's cache
+        const { me } = cache.readQuery({ query: QUERY_ME });
+        cache.writeQuery({
+          query: QUERY_ME,
+          data: { me: { ...me, gardens: [...me.gardens, addGarden] } },
+        });
+      },
+    });
+
+    const handleAddGarden = async (e) => {
       e.preventDefault();
 
-      console.log(sowDate);
-      console.log(plantDate);
-      console.log(firstHarvest);
-      console.log(lastHarvest);
+      try {
+        const { data } = await addGarden({
+          variables: {
+            vegetable,
+            variety,
+            startedAs,
+            sowDate,
+            plantDate,
+            firstHarvest,
+            lastHarvest,
+            notes
+          },
+        });
+
+        setVegetable('');
+        setVariety('');
+        setNotes('');
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    const handleInputChange = (event) => {
+      const { name, value } = event.target;
+
+      if (name === 'vegetable') {
+        setVegetable(value);
+      } else if (name === 'variety') {
+        setVariety(value);
+      } else if (name === 'startedAs') {
+        setStartedAs(value);
+      } else {
+        setNotes(value);
+      }
     };
 
     return (
@@ -100,8 +159,29 @@ const GardenTable = () => {
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={handleClose}></button>
               </div>
               <div className="modal-body">
-                <form onSubmit={handleCreateGarden}>
+                <form onSubmit={handleAddGarden}>
                   <div className="form-group">
+                    <input
+                      value={vegetable}
+                      name='vegetable'
+                      onChange={handleInputChange}
+                      type='text'
+                      placeholder='Vegetable'
+                    />
+                    <input
+                      value={variety}
+                      name='variety'
+                      onChange={handleInputChange}
+                      type='text'
+                      placeholder='Variety'
+                    />
+                    <input
+                      value={startedAs}
+                      name='startedAs'
+                      onChange={handleInputChange}
+                      type='text'
+                      placeholder='Started as'
+                    />
                     <div className='field-wrap'>
                       <label className='input-label'>Select sowing date</label>
                       <DatePicker 
@@ -138,6 +218,14 @@ const GardenTable = () => {
                         dateFormat='MMMM dd yyyy'
                       />
                     </div>
+                    <textarea
+                      placeholder="add some notes..."
+                      value={notes}
+                      name='notes'
+                      onChange={handleInputChange}
+                      type='text'
+                      className='notes-input'
+                    ></textarea>
                     <button className="btn btn-primary" onClick={handleClose}>Submit</button>
                   </div>
                 </form>

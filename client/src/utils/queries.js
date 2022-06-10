@@ -21,28 +21,39 @@ query user($email: String!) {
 }
 `;
 
-export const QUERY_USERS = gql`
-{
-  users{ 
-    _id
-    username
-    email
-    password
-  }
-}
-`;
 export const QUERY_GARDENS = gql`
-{
-  gardens {
-    _id
-    vegetable
-    variety
-    startedAs
-    sowDate
-    plantDate
-    firstHarvest
-    lastHarvest
-    notes
+  query getGardens {
+    gardens {
+      _id
+      vegetable
+      variety
+      startedAs
+      sowDate
+      plantDate
+      firstHarvest
+      lastHarvest
+      notes
+    }
   }
-}
+`;
+
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      email
+      gardens {
+        _id
+        vegetable
+        variety
+        startedAs
+        sowDate
+        plantDate
+        firstHarvest
+        lastHarvest
+        notes
+      }
+    }
+  }
 `;
