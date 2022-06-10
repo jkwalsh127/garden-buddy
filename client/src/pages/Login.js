@@ -47,10 +47,11 @@ const Login = (props) => {
           <h4 className="card-header bg-dark text-light p-2">Login</h4>
           <div className="card-body">
             {data ? (
-              <p>
-                Success! You may now {' '}
+              <><p>
+                Success!You may now {' '}
                 <Link to="/gardens">access Garden Buddy.</Link>
               </p>
+              </>
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input

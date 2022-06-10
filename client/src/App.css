@@ -58,7 +58,9 @@
   font-size: 50px;
   color: var(--green);
   text-decoration: none;
-  text-decoration-color: red;
+}
+.app-title:hover {
+  color: var(--brown);
 }
 .inner-container {
   width: 90%;
