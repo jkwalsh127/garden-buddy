@@ -14,23 +14,23 @@ export default function Beets() {
                     <ul className='detail-list'>
                         <label className='detail-label'>Sun Exposure</label>
                         <li className='detail'>
-                            Full Sun
+                            Full/Part Sun
                         </li>
                         <label className='detail-label'>Soil pH</label>
                         <li className='detail'>
-                            Acidic-Neutral
+                            Acidic, Neutral
                         </li>
                         <label className='detail-label'>Bloom Time</label>
                         <li className='detail'>
-                            Summer
+                            Seasonal
                         </li>
                         <label className='detail-label'>Days to Harvest</label>
                         <li className='detail'>
-                            60-100
+                            55-70
                         </li>
                         <label className='detail-label'>Recommended Start</label>
                         <li className='detail'>
-                            Indoors
+                            Indoors/Outdoors
                         </li>
                         <label className='detail-label'>Seed Depth</label>
                         <li className='detail'>
@@ -41,7 +41,7 @@ export default function Beets() {
                 <div className='description-wrap'>
                     <img className='veggie-img' src={beets} alt='tomato plant'></img>
                     <p className='description'>
-                        THSSI ISHI HDIHF OSDHFDO ISHF ODIHFSDOIF HDOIHDFO IHFDOID FHODISF. THSS IISH IHD IHFO SDHFDO ISH FODIHFSDOIF HDOIH DFOIH FDOID FHODI SF.THSSIIS HIHD IHFOS DHFDOI SHF ODIHFS DOIFHD OIHDFOI HFDOIDF HODISF. THSSII SHIHD IHFOSD HFDOI SHFODI HFSDO IFHDOI HDFOI HFDOID FHOD ISF.THSSI ISHI HDIH FOSDH FDOISH FODIHF SDOIFH DOIH DFOIHF DOIDFHOD ISF. THSSI ISH IHDIH FOSDHF DOIS HFODIH FSDOIFHD OIHD FOIHFDO IDFHO DISF.
+                        Beets can be used for a variety of things.
                     </p>
                 </div>
             </div>
