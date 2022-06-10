@@ -1,8 +1,9 @@
 import React from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { setContext } from '@apollo/client/link/context';
 import './App.css';
+import { NavLink } from 'react-router-dom';
 import Header from './components/Header';
 import Schedule from './pages/Schedule';
 import Gardens from './pages/Gardens';
@@ -44,9 +45,14 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="App">
-          <Header />
           <div className='outer-container'>
+            <div className='title-wrap'>
+              <NavLink className="app-title font-title" to="/">
+                Garden Buddy
+              </NavLink>
+            </div>
             <div className='inner-container'>
+              <Header />
               <Routes>
                 <Route
                   path="/"
