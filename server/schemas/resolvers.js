@@ -46,17 +46,17 @@ const resolvers = {
       return await Garden.create({ vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes });
     }
   }, 
-  updateGarden: async (parent, { gardenId, vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes }) => {
-    return Garden.findOneAndUpdate{
-      { _id: gardenId  }, 
-      {
-        $addToSet: { gardens: { vegetable,  variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes } }
-      },
-      {
-        new: true, 
-        runValidators: true, 
-      }
-    }
+  // updateGarden: async (parent, { gardenId, vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes }) => {
+  //   return Garden.findOneAndUpdate{
+  //     { _id: gardenId  }, 
+  //     {
+  //       $addToSet: { gardens: { vegetable,  variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes } }
+  //     },
+  //     {
+  //       new: true, 
+  //       runValidators: true, 
+  //     }
+  //   }
       // return await Garden.findByIdAndUpdate( { _id: _id }, args, { new: true });
   // },
   // removeGarden: async (parent, {userId, gardenId} ) => {
