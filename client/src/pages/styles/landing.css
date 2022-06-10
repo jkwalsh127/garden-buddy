@@ -1,23 +1,45 @@
+
 .row {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
+.page-title {
+  font-family: cursive;
+  font-display: bold;
+  font-size: 50px;
+}
 
 .about-text {
-    margin-top: 10%;
-    border: 1px solid var(--brown);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 15px 10px 2px 1px rgb(195, 120, 87);
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-left: 10%;
+  border: 1px solid var(--brown);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 15px 10px 2px 1px rgb(195, 120, 87);
 }
 
+
 #button { 
-    background-color: var(--orange);
-    color: var(--light-white);
-    font-size: 20px;
-    padding: 10px 60px;
-    border-radius: 5px;
-    margin: 10px 0px;
-    cursor: pointer;
+  background-color: var(--green);
+  color: var(--light-white);
+  font-size: 20px;
+  font-family: cursive;
+  padding: 10px 50px;
+  border-radius: 30px;
+  margin: 10px 0px;
+  cursor: pointer;
+  margin-right: 50px;
+  margin-left: 300px;
+}
+
+.buttonwrapper {
+  display: flex;
+  align-self: center;
+}
+
+.fruits {
+  margin-top: 5%;
+  align-self: center;
 }
