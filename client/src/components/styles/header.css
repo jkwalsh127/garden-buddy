@@ -3,19 +3,11 @@
     height: 80px;
     background-color: var(--green); 
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     border-bottom: 3px solid var(--brown);
 }
 
-.app-title {
-    margin: 0 0 0 30px;
-    font-size: 46px;
-    font-family: cursive;
-    color: var(--light-white);
-    text-decoration: none;
-    text-decoration-color: red;
-}
 #app-title {
     text-decoration: none;
 }
@@ -28,7 +20,3 @@
     margin: 0 15px 0 15px;
     font-weight: 600;
 }
-.nav-link:hover {
-    color: var(--orange);
-}
-

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './styles/header.css';
 
 // import './styles/HeaderMediaQueries.css';
@@ -17,17 +17,13 @@ const Header = () => {
 
   const navLinkStyles = ({ isActive }) => {
     return {
-      fontSize: isActive ? '20px' : '16px',
+      fontSize: isActive ? '24px' : '20px',
+      textDecoration: isActive ? 'underline' : 'none',
       color: isActive ? 'var(--orange)' : 'var(--light-white)',
     }
   }
   return (
     <header className="header">
-      <Link className="" to="/">
-        <h1 className="app-title" id='app-title'>
-          Garden Buddy
-        </h1>
-      </Link>
       <div className='nav'>
         {/* {Auth.loggedIn() ? ( */}
           <>
