@@ -35,9 +35,9 @@ const Header = () => {
             <NavLink style={navLinkStyles} className="nav-link" to="/gardens">
               View Profile
             </NavLink>
-            <button className="nav-link" onClick={logout}>
+            <NavLink style={navLinkStyles} className="nav-link" onClick={logout} to="/login">
                 Logout
-            </button>
+            </NavLink>
           </>
         {/*}) : (
           <>
