@@ -3,13 +3,16 @@ import { Link, NavLink } from 'react-router-dom';
 import './styles/header.css';
 // import './styles/HeaderMediaQueries.css';
 
-// import Auth from '../../utils/auth';
+
+
+
+import Auth from '../utils/auth';
 
 const Header = () => {
-//   const logout = (event) => {
-//     event.preventDefault();
-//     Auth.logout();
-//   };
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
 
   const navLinkStyles = ({ isActive }) => {
     return {
@@ -36,6 +39,9 @@ const Header = () => {
             <NavLink style={navLinkStyles} className="nav-link" to="/gardens">
               View Profile
             </NavLink>
+            <button className="nav-link" onClick={logout}>
+                Logout
+            </button>
           </>
         {/*}) : (
           <>

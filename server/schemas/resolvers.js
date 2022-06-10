@@ -20,7 +20,7 @@ const resolvers = {
   },
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
-      console.log("addUser");
+      console.log("addUser", username, email, password);
       try {
         const user = await User.create({ username, email, password });
       const token = signToken(user);
@@ -44,18 +44,28 @@ const resolvers = {
     },
     createGarden: async (parent, { vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes }) => {
       return await Garden.create({ vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes });
-    },
-    updateGarden: async (_id, args) => {
-   
-      return await Garden.findByIdAndUpdate( { _id: id }, args, { new: true });
-    },
-    removeGarden: async (parent, args , context) => {
-      if (context.gardens) {
-        return Garden.findByIdAndDelete({ _id: context.gardens._id });
-      }
-      throw new AuthenticationError('You need to be logged in!');
     }
-  }
+  }, 
+  // updateGarden: async (parent, { gardenId, vegetable, variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes }) => {
+  //   return Garden.findOneAndUpdate{
+  //     { _id: gardenId  }, 
+  //     {
+  //       $addToSet: { gardens: { vegetable,  variety, startedAs, sowDate, plantDate, firstHarvest, lastHarvest, notes } }
+  //     },
+  //     {
+  //       new: true, 
+  //       runValidators: true, 
+  //     }
+  //   }
+      // return await Garden.findByIdAndUpdate( { _id: _id }, args, { new: true });
+  // },
+  // removeGarden: async (parent, {userId, gardenId} ) => {
+  //   return await User.findOneAndUpdate(
+  //     { _id: userId },
+  //     { $pull: { gardens: { _id: gardenId } } },
+  //     { new: true }
+  //     );
+  //   }  
 };
 
 module.exports = resolvers;
