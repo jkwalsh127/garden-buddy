@@ -12,8 +12,9 @@
 .about-text {
   margin-top: 10%;
   margin-bottom: 10%;
+  margin-left: 10%;
   border: 1px solid var(--brown);
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 15px 10px 2px 1px rgb(195, 120, 87);
@@ -26,11 +27,11 @@
   font-size: 20px;
   font-family: cursive;
   padding: 10px 50px;
-  border-radius: 50px;
+  border-radius: 30px;
   margin: 10px 0px;
   cursor: pointer;
   margin-right: 50px;
-  margin-left: 200px;
+  margin-left: 300px;
 }
 
 .buttonwrapper {
@@ -41,9 +42,4 @@
 .fruits {
   margin-top: 5%;
   align-self: center;
-}
-
-.veggies {
-  align-self: center;
-  margin-top: 5%;
 }
