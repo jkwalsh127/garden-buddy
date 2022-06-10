@@ -13,6 +13,8 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import herbLeft from './images/herbs-left.png';
 import herbRight from './images/herbs-right.png';
+import leafLeft from './images/leaf-left.png';
+import leafRight from './images/leaf-right.png';
 
 
 // const client = new ApolloClient({
@@ -47,9 +49,18 @@ function App() {
         <div className="App">
           <div className='outer-container'>
             <div className='title-wrap'>
-              <NavLink className="app-title font-title" to="/">
-                Garden Buddy
-              </NavLink>
+              <div className='title-container'>
+                <div className='inc-imgs'>
+                  <img src={leafLeft} alt="leafs" className='leafs'/>
+                  <NavLink className="app-title font-title" to="/">
+                    Garden Buddy
+                  </NavLink>
+                  <img src={leafRight} alt="leafs" className='leafs'/>
+                </div>
+                <p className='subtitle font-title'>
+                  The app that grows with you
+                </p>
+              </div>
             </div>
             <div className='inner-container'>
               <Header />

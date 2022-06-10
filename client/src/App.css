@@ -10,12 +10,9 @@
 .App {
   text-align: center;
 }
-
 .font-title {
   font-family: "CourgetteRegular";
- }
- 
-
+}
 .outer-container {
   width: 100%;
   min-height: 100vh;
@@ -31,6 +28,30 @@
   height: 150px;
   display: flex;
   justify-content: center;
+}
+.title-container {
+  width: 450px;
+  height: 70px;
+  border-bottom: 1px solid var(--green);
+}
+.inc-imgs {
+  width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 70px;
+  padding: 15px 0 0 0;
+}
+.leafs {
+  height: 40px;
+  opacity: .6;
+  margin: 10px 0 0 0;
+}
+.subtitle {
+  color: var(--green);
+  font-size: 20px;
+  margin: 10px 0 0 0;
 }
 .app-title {
   margin: 10px 0 0 0;
