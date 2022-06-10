@@ -28,8 +28,16 @@ a {
   width: 80%;
   min-height: 100vh;
   height: 100%;
-  background-color: var(--dark-white);
+  background-color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  justify-content: space-between;  
+}
+.lower-imgs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.herbs {
+  height: 200px;
 }

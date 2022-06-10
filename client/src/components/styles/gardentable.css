@@ -1,0 +1,31 @@
+table, th, td {
+  border: 1px solid;
+  padding: 5px;
+  overflow-wrap: normal;
+}
+th, td {
+  width: 100px;
+}
+table {
+  border-collapse: collapse;
+}
+.notes {
+  width: 200px;
+}
+.notes-data {
+  width: 200px;
+}
+
+.field-wrap {
+    display: flex;
+}
+.input-label {
+    width: 200px;
+    text-align: end;
+}
+.field {
+    width: 100px;
+}
+.react-datepicker-wrapper {
+    width: 150px;
+}
