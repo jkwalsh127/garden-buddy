@@ -35,7 +35,7 @@ const GardenTable = () => {
 
     return (
         <>
-        <div>
+        <div className='table-wrap'>
           {loading ? (
             <div>Loading...</div>
               ) : (
@@ -56,27 +56,27 @@ const GardenTable = () => {
               {gardenList.map((garden) => {
                 return (
                   <tr key={garden._id} value={garden.vegetable}>
-                    <td>
-                        <button onClick={handleShow}>
+                    <td className='actions'>
+                        <button onClick={handleShow} className='button'>
                             <FontAwesomeIcon icon={faEdit} />
                         </button>
-                        <button onClick={handleShow}>
+                        <button onClick={handleShow} className='button'>
                             <FontAwesomeIcon icon={faPlusCircle} />
                         </button>
                     </td>
-                    <td>
+                    <td className='inner-cells'>
                       {garden.vegetable}
                     </td>
-                    <td>
+                    <td className='inner-cells'>
                       {garden.variety}
                     </td>
-                    <td>
+                    <td className='inner-cells'>
                       {garden.sowDate}
                     </td>
-                    <td>
+                    <td className='inner-cells'>
                       {garden.plantDate}
                     </td>
-                    <td>
+                    <td className='inner-cells'>
                       {garden.firstHarvest}
                     </td>
                     <td>

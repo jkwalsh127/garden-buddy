@@ -1,16 +1,39 @@
+.table-wrap {
+  display: flex;
+  justify-content: center;
+}
+
 table, th, td {
-  border: 1px solid;
+  border: 1px solid var(--green);
   padding: 5px;
   overflow-wrap: normal;
 }
-th, td {
-  width: 100px;
-}
 table {
   border-collapse: collapse;
+  margin: 10px 0 0 0;
+}
+th {
+  min-width: 115px;
+  color: var(--light-white);
+  background-color: var(--green);
+}
+td {
+  background-color: var(--light-white);
+}
+.actions {
+  width: 100px;
+}
+.inner-cells {
+  min-width: 115px;
+  width: 10%;
+}
+
+.button {
+  margin: 0 3px;
 }
 .notes {
-  width: 200px;
+  min-width: 200px;
+  width: 20%;
 }
 .notes-data {
   width: 200px;
@@ -28,4 +51,7 @@ table {
 }
 .react-datepicker-wrapper {
     width: 150px;
+}
+.button {
+  background-color: var(--brown);
 }
