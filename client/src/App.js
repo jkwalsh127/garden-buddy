@@ -64,35 +64,37 @@ function App() {
             </div>
             <div className='inner-container'>
               <Header />
-              <Routes>
-                <Route
-                  path="/"
-                  element={<Landing />}
-                />
-                <Route 
-                    path="/login" 
-                    element={<Login />}
-                />
-                <Route 
-                path="/signup" 
-                element={<Signup />}
-                />
-                <Route 
-                    path="/findzone" 
-                    element={<Schedule />}
-                />
-                <Route 
-                    path="/guides" 
-                    element={<Guides />}
-                />
-                <Route 
-                    path="/gardens" 
-                    element={<Gardens />}
-                />
-              </Routes>
-              <div className='lower-imgs'>
-                <img src={herbLeft} alt="herbs" className='herbs'/>
-                <img src={herbRight} alt="herbs" className='herbs'/>
+              <div className='content-container'>
+                <Routes>
+                  <Route
+                    path="/"
+                    element={<Landing />}
+                  />
+                  <Route 
+                      path="/login" 
+                      element={<Login />}
+                  />
+                  <Route 
+                  path="/signup" 
+                  element={<Signup />}
+                  />
+                  <Route 
+                      path="/findzone" 
+                      element={<Schedule />}
+                  />
+                  <Route 
+                      path="/guides" 
+                      element={<Guides />}
+                  />
+                  <Route 
+                      path="/gardens" 
+                      element={<Gardens />}
+                  />
+                </Routes>
+                <div className='lower-imgs'>
+                  <img src={herbLeft} alt="herbs" className='herbs'/>
+                  <img src={herbRight} alt="herbs" className='herbs'/>
+                </div>
               </div>
             </div>
           </div>

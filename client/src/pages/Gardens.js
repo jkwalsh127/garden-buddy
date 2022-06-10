@@ -11,7 +11,7 @@ const Profile = () => {
 
 
     return (
-      <div className=''>
+      <div className='gardens-wrap'>
         <div className='title-wrap-gardens'>
           <img src={birdLeft} alt="birds" className='birds'/>
           <h1 className='page-title'>My Gardens</h1>

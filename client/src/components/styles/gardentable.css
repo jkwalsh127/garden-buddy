@@ -4,15 +4,21 @@
 }
 
 table, th, td {
-  border: 1px solid;
+  border: 1px solid var(--green);
   padding: 5px;
   overflow-wrap: normal;
 }
-th {
-  min-width: 115px;
-}
 table {
   border-collapse: collapse;
+  margin: 50px 0 0 0;
+}
+th {
+  min-width: 115px;
+  color: var(--light-white);
+  background-color: var(--green);
+}
+td {
+  background-color: var(--light-white);
 }
 .actions {
   width: 100px;
@@ -45,4 +51,7 @@ table {
 }
 .react-datepicker-wrapper {
     width: 150px;
+}
+.button {
+  background-color: var(--brown);
 }
