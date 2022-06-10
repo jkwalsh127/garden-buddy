@@ -36,3 +36,24 @@ export const QUERY_GARDENS = gql`
     }
   }
 `;
+
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      email
+      gardens {
+        _id
+        vegetable
+        variety
+        startedAs
+        sowDate
+        plantDate
+        firstHarvest
+        lastHarvest
+        notes
+      }
+    }
+  }
+`;
