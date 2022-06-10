@@ -27,18 +27,18 @@ const typeDefs = gql`
   }
 
   type Query {
-    user(username: String): User
+    user(email: String): User
     gardens(_id: String): [Garden]
-    users(_id: String): [User]
+    users: [User]
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    createGarden(vegetable: String!, variety: String, startedAs: String, sowDate: String, plantDate: String, firstHarvest: String, lastHarvest: String, notes: String): Garden
-    removeGarden: Garden
-    updateGarden(userId: ID, vegetable: String!, variety: String, startedAs: String, sowDate: String, plantDate: String, firstHarvest: String, lastHarvest: String, notes: String): Garden
+    createGarden(gardenId: ID!, vegetable: String!, variety: String, startedAs: String, sowDate: String, plantDate: String, firstHarvest: String, lastHarvest: String, notes: String): Garden
+    removeGarden(userId: ID, gardenId: ID!): Garden
   }
 `;
-
+// updateGarden(userId: ID!, vegetable: String!, variety: String, startedAs: String, sowDate: String, plantDate: String, firstHarvest: String, lastHarvest: String, notes: String): Garden
+// removeGarden: Garden
 module.exports = typeDefs;
