@@ -13,8 +13,9 @@ const Header = () => {
 
   const navLinkStyles = ({ isActive }) => {
     return {
-      fontSize: isActive ? '20px' : '16px',
-      color: isActive ? 'var(--orange)' : 'var(--green)',
+      fontSize: isActive ? '24px' : '20px',
+      textDecoration: isActive ? 'underline' : 'none',
+      color: isActive ? 'var(--orange)' : 'var(--light-white)',
     }
   }
   return (

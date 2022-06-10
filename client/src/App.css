@@ -30,12 +30,12 @@
   justify-content: center;
 }
 .title-container {
-  width: 450px;
-  height: 70px;
+  width: 420px;
+  height: 73px;
   border-bottom: 1px solid var(--green);
 }
 .inc-imgs {
-  width: 450px;
+  width: 420px;
   display: flex;
   justify-content: center;
   align-items: center;
