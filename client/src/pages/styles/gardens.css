@@ -1,6 +1,11 @@
 .gardens-wrap {
     justify-self:end;
 }
+.head-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 .title-wrap-gardens {
     display: flex;
     justify-content: center;
@@ -18,4 +23,7 @@
     height: 60px;
     padding: 0 0 10px 0;
     opacity: .6;
+}
+.tomatoes {
+    height: 150px;
 }
