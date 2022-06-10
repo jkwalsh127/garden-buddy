@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/guides.css';
 import { Link } from 'react-router-dom';
-import tomato from './images/tomato.jpg';
+import vegetables from './images/vegetables.jpg';
 import Beets from '../components/Beets';
 import Tomatoes from '../components/Tomatoes';
 import Eggplants from '../components/Eggplants';
@@ -12,29 +12,29 @@ export default function Guides() {
     return (
         <>
             <h1 className='page-title'>Growing Guides</h1>
-            <h2 className='veggie-title'>Tomatoes</h2>
+            <h2 className='veggie-title'>Check out the guides on how to grow your favorite vegetables!</h2>
             <div className='content-wrap'>
                 <div className='list-wrap'>
                     <ul className='veggie-list'> 
                         <h2 className='list-title'>Vegetables</h2>  
                         <li className='veggie'>
-                            <Link className='veggie-link' to='../components/Asparagus'>Asparagus</Link>
+                            <Link className='veggie-link' to='/guides/Asparagus'>Asparagus</Link>
                         </li>
                         <li className='veggie'>
-                            <Link className='veggie-link' to='../components/Beets'>Beets</Link>
+                            <Link className='veggie-link' to='/guides//Beets'>Beets</Link>
                         </li>
                         <li className='veggie'>
-                            <Link className='veggie-link' to='../components/Carrots'>Carrots</Link>
+                            <Link className='veggie-link' to='/guides/Carrots'>Carrots</Link>
                         </li>
                         <li className='veggie'>
-                            <Link className='veggie-link' to='../components/Eggplants'>Eggplants</Link>
+                            <Link className='veggie-link' to='/guides/Eggplants'>Eggplants</Link>
                         </li>
                         <li className='veggie'>
-                            <Link className='veggie-link' to='../components/Tomatoes'>Tomatoes</Link>
+                            <Link className='veggie-link' to='/guides/Tomatoes'>Tomatoes</Link>
                         </li>
                     </ul>
                 </div>
-                <div className='guide-wrap'>
+                {/* <div className='guide-wrap'>
                     <div className='detail-wrap'>
                         <ul className='detail-list'>
                             <label className='detail-label'>Sun Exposure</label>
@@ -62,14 +62,14 @@ export default function Guides() {
                                 1/2"
                             </li>
                         </ul>
-                    </div>
+                    </div> */}
                     <div className='description-wrap'>
-                        <img className='veggie-img' src={tomato} alt='tomato plant'></img>
+                        <img className='veggie-img' src={vegetables} alt='tomato plant'></img>
                         <p className='description'>
-                            THSSI ISHI HDIHF OSDHFDO ISHF ODIHFSDOIF HDOIHDFO IHFDOID FHODISF. THSS IISH IHD IHFO SDHFDO ISH FODIHFSDOIF HDOIH DFOIH FDOID FHODI SF.THSSIIS HIHD IHFOS DHFDOI SHF ODIHFS DOIFHD OIHDFOI HFDOIDF HODISF. THSSII SHIHD IHFOSD HFDOI SHFODI HFSDO IFHDOI HDFOI HFDOID FHOD ISF.THSSI ISHI HDIH FOSDH FDOISH FODIHF SDOIFH DOIH DFOIHF DOIDFHOD ISF. THSSI ISH IHDIH FOSDHF DOIS HFODIH FSDOIFHD OIHD FOIHFDO IDFHO DISF.
+                            Click any of the links on the left to access the growing guide for that vegetable. 
                         </p>
                     </div>
-                </div>
+                {/* </div> */}
             </div>
         </>
     );
