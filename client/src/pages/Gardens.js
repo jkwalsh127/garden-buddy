@@ -28,7 +28,7 @@ const Profile = () => {
   const [lastHarvest, setLastHarvest] = useState(new Date());
   const [notes, setNotes] = useState('');
 
-  const [addGarden, { error }] = useMutation(ADD_GARDEN, {
+  const [addGarden] = useMutation(ADD_GARDEN, {
     update(cache, { data: { addGarden } }) {
       try {
         const { gardens } = cache.readQuery({ query: QUERY_GARDENS });
@@ -63,6 +63,8 @@ const Profile = () => {
           notes
         },
       });
+
+      console.log(data);
 
       setVegetable('');
       setVariety('');
