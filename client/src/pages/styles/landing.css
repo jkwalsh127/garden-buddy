@@ -42,5 +42,11 @@
 .fruits {
   margin-top: 5%;
   align-self: center;
-  size: 26pc;
+  border-radius: 8px;
+  object-fit: fill;
+  width: 300px;
+  height: 300px;
 }
+
+
+
