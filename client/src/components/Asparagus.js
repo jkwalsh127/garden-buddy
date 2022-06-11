@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/guides.css';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import asparagus from '../pages/images/asparagus.jpg';
 
 export default function Asparagus() {
