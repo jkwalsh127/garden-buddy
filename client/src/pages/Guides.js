@@ -21,7 +21,7 @@ export default function Guides() {
                             <Link className='veggie-link' to='/guides/Asparagus'>Asparagus</Link>
                         </li>
                         <li className='veggie'>
-                            <Link className='veggie-link' to='/guides//Beets'>Beets</Link>
+                            <Link className='veggie-link' to='/guides/Beets'>Beets</Link>
                         </li>
                         <li className='veggie'>
                             <Link className='veggie-link' to='/guides/Carrots'>Carrots</Link>
