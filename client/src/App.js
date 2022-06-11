@@ -1,6 +1,6 @@
 import React from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { setContext } from '@apollo/client/link/context';
 import './App.css';
 import { NavLink } from 'react-router-dom';
@@ -15,7 +15,11 @@ import herbLeft from './images/herbs-left.png';
 import herbRight from './images/herbs-right.png';
 import leafLeft from './images/leaf-left.png';
 import leafRight from './images/leaf-right.png';
-
+import Beets from './components/Beets';
+import Tomatoes from './components/Tomatoes';
+import Eggplants from './components/Eggplants';
+import Carrots from './components/Carrots';
+import Asparagus from './components/Asparagus';
 
 // const client = new ApolloClient({
 //   uri: '/graphql',
@@ -86,6 +90,26 @@ function App() {
                       path="/guides" 
                       element={<Guides />}
                   />
+                  <Route 
+                      path="/guides/Tomatoes"
+                      element={<Tomatoes />}
+                  /> 
+                  <Route 
+                      path="/guides/Beets"
+                      element={<Beets />}
+                  />
+                  <Route 
+                      path="/guides/Carrots"
+                      element={<Carrots />}
+                  />
+                  <Route 
+                      path="/guides/Asparagus"
+                      element={<Asparagus />}
+                  />
+                  <Route 
+                      path="/guides/Eggplants"
+                      element={<Eggplants />}
+                  />               
                   <Route 
                       path="/gardens" 
                       element={<Gardens />}

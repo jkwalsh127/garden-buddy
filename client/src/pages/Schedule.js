@@ -14,7 +14,7 @@ import zone10 from './images/zone-10.jpg';
 
 
 export default function Schedule() {
-
+   
     const [zipCode, setZipCode] = useState('');
     const [growZone, setGrowZone] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
@@ -73,7 +73,7 @@ export default function Schedule() {
         setSchedule(zone10);
         }
       };
-
+    
 
 
   return (
