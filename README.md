@@ -1,10 +1,16 @@
 # garden-buddy
 
-# Collaborators 
+Give a ⭐️ if you like this project!
 
+# Collaborators
+
+<p float="center">
 Jake Walsh - https://github.com/jkwalsh127
 Snehita Kolli - https://github.com/snehitak20
 Asika Habib - https://github.com/toma95s
+</p>
+
+
 
 # Group Work Technologies Used 🤝 
 
@@ -16,6 +22,7 @@ Asika Habib - https://github.com/toma95s
 <img width="70" alt ="Gitlab badge" src ="https://img.shields.io/badge/GitLab-330F63?style=for-the-badge&logo=gitlab&logoColor=white"/>
  </p>
 
+ 
  # OS 💻
 
 <p float="center">
@@ -25,6 +32,7 @@ Asika Habib - https://github.com/toma95s
 
 
 # Skills/Technologies Used On Project
+
 <p float="center">
 <img width="60" alt ="CSS badge" src = "https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white"/>
 <img width="60" alt ="JavaScript badge" src = "https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
@@ -35,6 +43,7 @@ Asika Habib - https://github.com/toma95s
 <img width="60" alt ="Eslint badge" src = "https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white"/>
 <img width="60" alt ="GIT badge" src ="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white"/>
 </p>
+
 
 
 <img width="80" alt="badge1" src="https://img.shields.io/badge/License-MIT-lightgrey">
