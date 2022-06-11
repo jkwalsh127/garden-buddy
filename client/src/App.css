@@ -6,6 +6,9 @@
   --light-white: #f5f1da;
   --orange: #fdac61;
 }
+html {
+  background-color: var(--light-white);
+}
 
 .App {
   text-align: center;
@@ -15,7 +18,7 @@
 }
 .outer-container {
   width: 100%;
-  min-height: 90vh;
+  min-height: 100vh;
   height: fit-content;
   background-color: var(--light-white);
   display: flex;
@@ -64,20 +67,18 @@
 }
 .inner-container {
   width: 90%;
-  min-height: 100vh;
-  height: 100%;
   background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;  
-  margin: 0;
+  margin: 0 0 100px 0;
   box-shadow: 0px 0px 10px rgb(88, 88, 88);
 }
 .content-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 90vh;
+  align-items: center;
 }
 .lower-imgs {
   width: 100%;

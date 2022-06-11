@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_GARDENS } from '../utils/queries';
-import { QUERY_ME } from '../utils/queries';
-import { ADD_GARDEN } from '../utils/mutations';
-import './styles/gardentable.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
-import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { useQuery } from '@apollo/client';
+import { QUERY_GARDENS } from '../utils/queries';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './styles/gardentable.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Modal } from 'react-bootstrap';
-import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
+import 'react-datepicker/dist/react-datepicker.css';
 
 const GardenTable = () => {
 
+<<<<<<< HEAD
+  const { loading, data } = useQuery(QUERY_GARDENS);
+  const gardenList = data?.gardens || [];
+=======
     const { loading, data } = useQuery(QUERY_GARDENS);
     const gardenList = data?.gardens || [];
 
@@ -91,154 +91,76 @@ const GardenTable = () => {
         setNotes(value);
       }
     };
+>>>>>>> 410fa9f3ba57574a4ae0946d4151b417cb945055
 
-    return (
-        <>
-        <div className='table-wrap'>
-          {loading ? (
-            <div>Loading...</div>
-              ) : (
-            <table>
-              <thead>
-                <tr>
-                  <th>Actions</th>
-                  <th>Vegetable</th>
-                  <th>variety</th>
-                  <th>Sow Date</th>
-                  <th>Plant Date</th>
-                  <th>First Harvest</th>
-                  <th>Last Harvest</th>
-                  <th className='notes'>Notes</th>
-                </tr>
-              </thead>
-              <tbody>
-              {gardenList.map((garden) => {
-                return (
-                  <tr key={garden._id} value={garden.vegetable}>
-                    <td className='actions'>
-                        <button onClick={handleShow} className='button'>
-                            <FontAwesomeIcon icon={faEdit} />
-                        </button>
-                        <button onClick={handleShow} className='button'>
-                            <FontAwesomeIcon icon={faPlusCircle} />
-                        </button>
-                    </td>
-                    <td className='inner-cells'>
-                      {garden.vegetable}
-                    </td>
-                    <td className='inner-cells'>
-                      {garden.variety}
-                    </td>
-                    <td className='inner-cells'>
-                      {garden.sowDate}
-                    </td>
-                    <td className='inner-cells'>
-                      {garden.plantDate}
-                    </td>
-                    <td className='inner-cells'>
-                      {garden.firstHarvest}
-                    </td>
-                    <td>
-                      {garden.lastHarvest}
-                    </td>
-                    <td className='notes-data'>
-                      {garden.notes}
-                    </td>
-                  </tr>
-                );
-              })}
-              </tbody>
-            </table>
-          )}
-        </div>
-        <Modal className="modal-dialog modal-dialog-centered modal-dialog-scrollable" show={show}>
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">Modal title</h5>
-                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={handleClose}></button>
-              </div>
-              <div className="modal-body">
-                <form onSubmit={handleAddGarden}>
-                  <div className="form-group">
-                    <input
-                      value={vegetable}
-                      name='vegetable'
-                      onChange={handleInputChange}
-                      type='text'
-                      placeholder='Vegetable'
-                    />
-                    <input
-                      value={variety}
-                      name='variety'
-                      onChange={handleInputChange}
-                      type='text'
-                      placeholder='Variety'
-                    />
-                    <input
-                      value={startedAs}
-                      name='startedAs'
-                      onChange={handleInputChange}
-                      type='text'
-                      placeholder='Started as'
-                    />
-                    <div className='field-wrap'>
-                      <label className='input-label'>Select sowing date</label>
-                      <DatePicker 
-                        className='field'
-                        selected={sowDate} 
-                        onChange={setSowDate}
-                        dateFormat='MMMM dd yyyy'
-                      />
-                    </div>
-                    <div className='field-wrap'>
-                      <label className='input-label'>Select planting date</label>
-                      <DatePicker
-                        className='field'
-                        selected={plantDate} 
-                        onChange={setPlantDate}
-                        dateFormat='MMMM dd yyyy'
-                      />
-                    </div>
-                    <div className='field-wrap'>
-                      <label className='input-label'>Select date of first harvest</label>
-                      <DatePicker
-                        className='field'
-                        selected={firstHarvest} 
-                        onChange={setFirstHarvest}
-                        dateFormat='MMMM dd yyyy'
-                      />
-                    </div>
-                    <div className='field-wrap'>
-                      <label className='input-label'>Select date of last harvest</label>
-                      <DatePicker
-                        className='field'
-                        selected={lastHarvest} 
-                        onChange={setLastHarvest}
-                        dateFormat='MMMM dd yyyy'
-                      />
-                    </div>
-                    <textarea
-                      placeholder="add some notes..."
-                      value={notes}
-                      name='notes'
-                      onChange={handleInputChange}
-                      type='text'
-                      className='notes-input'
-                    ></textarea>
-                    <button className="btn btn-primary" onClick={handleClose}>Submit</button>
-                  </div>
-                </form>
-              </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClose}>Close</button>
-                <button type="button" className="btn btn-primary" onClick={handleClose}>Save changes</button>
-              </div>
-            </div>
-          </div>
-        </Modal>
-    </>
-    )
+  return (
+    <div className='table-wrap'>
+      {loading ? (
+        <span>Loading...</span>
+         ) : (
+        <table>
+          <thead>
+            <tr>
+              <th className='actions'>Actions</th>
+              <th>Vegetable</th>
+              <th>Variety</th>
+              <th>Started As</th>
+              <th>Sow Date</th>
+              <th>Plant Date</th>
+              <th>First Harvest</th>
+              <th>Last Harvest</th>
+              <th className='notes'>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+          {gardenList.map((garden) => {
+            return (
+              <tr key={garden._id} value={garden.vegetable}>
+                <td className='actions'>
+                  <button className='button'>
+                      <FontAwesomeIcon icon={faEdit} />
+                  </button>
+                  <button 
+                    type="button"
+                    onClick={() => {
+                      console.log('clicked!');
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faTrash} />
+                  </button>
+                </td>
+                <td className='inner-cells'>
+                  {garden.vegetable}
+                </td>
+                <td className='inner-cells'>
+                  {garden.variety}
+                </td>
+                <td className='inner-cells'>
+                  {garden.startedAs}
+                </td>
+                <td className='inner-cells'>
+                  {garden.sowDate}
+                </td>
+                <td className='inner-cells'>
+                  {garden.plantDate}
+                </td>
+                <td className='inner-cells'>
+                  {garden.firstHarvest}
+                </td>
+                <td className='inner-cells'>
+                  {garden.lastHarvest}
+                </td>
+                <td className='notes-data'>
+                  {garden.notes}
+                </td>
+              </tr>
+            );
+          })}
+          </tbody>
+        </table>
+      )}
+    </div>
+  )
 };
 
 export default GardenTable;

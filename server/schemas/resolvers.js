@@ -12,7 +12,13 @@ const resolvers = {
     },
     gardens: async () => {
       return Garden.find();
-    }
+    },
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOne({ _id: context.user._id }).populate('gardens');
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
   },
   Mutation: {
     addUser: async (parent, { username, email, password }) => {

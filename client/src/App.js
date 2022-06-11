@@ -15,6 +15,8 @@ import herbLeft from './images/herbs-left.png';
 import herbRight from './images/herbs-right.png';
 import leafLeft from './images/leaf-left.png';
 import leafRight from './images/leaf-right.png';
+<<<<<<< HEAD
+=======
 import Beets from './components/Beets';
 import Tomatoes from './components/Tomatoes';
 import Eggplants from './components/Eggplants';
@@ -25,6 +27,7 @@ import Asparagus from './components/Asparagus';
 //   uri: '/graphql',
 //   cache: new InMemoryCache(),
 // });
+>>>>>>> 410fa9f3ba57574a4ae0946d4151b417cb945055
 
 const httpLink = createHttpLink({
   uri: '/graphql',
