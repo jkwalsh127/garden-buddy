@@ -13,6 +13,7 @@ import { ADD_GARDEN } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import { QUERY_GARDENS } from '../utils/queries';
 
+<<<<<<< HEAD
 const Profile = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -87,7 +88,10 @@ const Profile = () => {
     }
   };
 
+=======
+>>>>>>> 410fa9f3ba57574a4ae0946d4151b417cb945055
 
+const Profile = () => {
     return (
       <div className='gardens-wrap'>
         <div className='head-wrap'>

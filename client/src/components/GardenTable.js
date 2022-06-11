@@ -10,8 +10,88 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 const GardenTable = () => {
 
+<<<<<<< HEAD
   const { loading, data } = useQuery(QUERY_GARDENS);
   const gardenList = data?.gardens || [];
+=======
+    const { loading, data } = useQuery(QUERY_GARDENS);
+    const gardenList = data?.gardens || [];
+
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const [vegetable, setVegetable] = useState('');
+    const [variety, setVariety] = useState('');
+    const [startedAs, setStartedAs] = useState('');
+    const [sowDate, setSowDate] = useState(new Date());
+    const [plantDate, setPlantDate] = useState(new Date());
+    const [firstHarvest, setFirstHarvest] = useState(new Date());
+    const [lastHarvest, setLastHarvest] = useState(new Date());
+    const [notes, setNotes] = useState('');
+
+
+    const [addGarden] = useMutation(ADD_GARDEN, {
+      update(cache, { data: { addGarden } }) {
+        try {
+          const { gardens } = cache.readQuery({ query: QUERY_GARDENS });
+  
+          cache.writeQuery({
+            query: QUERY_GARDENS,
+            data: { gardens: [addGarden, ...gardens] },
+          });
+        } catch (e) {
+          console.error(e);
+        }
+  
+        // update me object's cache
+        const { me } = cache.readQuery({ query: QUERY_ME });
+        cache.writeQuery({
+          query: QUERY_ME,
+          data: { me: { ...me, gardens: [...me.gardens, addGarden] } },
+        });
+      },
+    });
+
+    const handleAddGarden = async (e) => {
+      e.preventDefault();
+
+      try {
+        const { data } = await addGarden({
+          variables: {
+            vegetable,
+            variety,
+            startedAs,
+            sowDate,
+            plantDate,
+            firstHarvest,
+            lastHarvest,
+            notes
+          },
+        });
+        console.log(data);
+        setVegetable('');
+        setVariety('');
+        setNotes('');
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    const handleInputChange = (event) => {
+      const { name, value } = event.target;
+
+      if (name === 'vegetable') {
+        setVegetable(value);
+      } else if (name === 'variety') {
+        setVariety(value);
+      } else if (name === 'startedAs') {
+        setStartedAs(value);
+      } else {
+        setNotes(value);
+      }
+    };
+>>>>>>> 410fa9f3ba57574a4ae0946d4151b417cb945055
 
   return (
     <div className='table-wrap'>
