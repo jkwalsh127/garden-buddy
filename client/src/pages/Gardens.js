@@ -13,8 +13,8 @@ import { ADD_GARDEN } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import { QUERY_GARDENS } from '../utils/queries';
 
-<<<<<<< HEAD
 const Profile = () => {
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -27,7 +27,6 @@ const Profile = () => {
   const [firstHarvest, setFirstHarvest] = useState(new Date());
   const [lastHarvest, setLastHarvest] = useState(new Date());
   const [notes, setNotes] = useState('');
-
 
   const [addGarden, { error }] = useMutation(ADD_GARDEN, {
     update(cache, { data: { addGarden } }) {
@@ -88,114 +87,109 @@ const Profile = () => {
     }
   };
 
-=======
->>>>>>> 410fa9f3ba57574a4ae0946d4151b417cb945055
-
-const Profile = () => {
-    return (
-      <div className='gardens-wrap'>
-        <div className='head-wrap'>
-          <img src={tomatoesLeft} alt="birds" className='tomatoes'/>
-          <div className='title-wrap-gardens'>
-            <img src={birdLeft} alt="birds" className='birds'/>
-            <h1 className='page-title font-title'>My Gardens</h1>
-            <img src={birdRight} alt="tomatoes" className='birds'/>
-          </div>
-          <img src={tomatoesRight} alt="tomatoes" className='tomatoes'/>
+  return (
+    <div className='gardens-wrap'>
+      <div className='head-wrap'>
+        <img src={tomatoesLeft} alt="birds" className='tomatoes'/>
+        <div className='title-wrap-gardens'>
+          <img src={birdLeft} alt="birds" className='birds'/>
+          <h1 className='page-title font-title'>My Gardens</h1>
+          <img src={birdRight} alt="tomatoes" className='birds'/>
         </div>
-
-        <button onClick={handleShow} className='button'>
-          Add Garden
-        </button>
-\       <GardenTable />
-        <Modal className="modal-dialog modal-dialog-centered modal-dialog-scrollable" show={show}>
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">Modal title</h5>
-                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={handleClose}></button>
-              </div>
-              <div className="modal-body">
-                <form onSubmit={handleAddGarden}>
-                  <div className="form-group">
-                    <input
-                      value={vegetable}
-                      name='vegetable'
-                      onChange={handleInputChange}
-                      type='text'
-                      placeholder='Vegetable'
+        <img src={tomatoesRight} alt="tomatoes" className='tomatoes'/>
+      </div>
+      <button onClick={handleShow} className='button'>
+        Add Garden
+      </button>
+      <GardenTable />
+      <Modal className="modal-dialog modal-dialog-centered modal-dialog-scrollable" show={show}>
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title">Modal title</h5>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={handleClose}></button>
+            </div>
+            <div className="modal-body">
+              <form onSubmit={handleAddGarden}>
+                <div className="form-group">
+                  <input
+                    value={vegetable}
+                    name='vegetable'
+                    onChange={handleInputChange}
+                    type='text'
+                    placeholder='Vegetable'
+                  />
+                  <input
+                    value={variety}
+                    name='variety'
+                    onChange={handleInputChange}
+                    type='text'
+                    placeholder='Variety'
+                  />
+                  <input
+                    value={startedAs}
+                    name='startedAs'
+                    onChange={handleInputChange}
+                    type='text'
+                    placeholder='Started as'
+                  />
+                  <div className='field-wrap'>
+                    <label className='input-label'>Select sowing date</label>
+                    <DatePicker 
+                      className='field'
+                      selected={sowDate} 
+                      onChange={setSowDate}
+                      dateFormat='MMMM dd yyyy'
                     />
-                    <input
-                      value={variety}
-                      name='variety'
-                      onChange={handleInputChange}
-                      type='text'
-                      placeholder='Variety'
-                    />
-                    <input
-                      value={startedAs}
-                      name='startedAs'
-                      onChange={handleInputChange}
-                      type='text'
-                      placeholder='Started as'
-                    />
-                    <div className='field-wrap'>
-                      <label className='input-label'>Select sowing date</label>
-                      <DatePicker 
-                        className='field'
-                        selected={sowDate} 
-                        onChange={setSowDate}
-                        dateFormat='MMMM dd yyyy'
-                      />
-                    </div>
-                    <div className='field-wrap'>
-                      <label className='input-label'>Select planting date</label>
-                      <DatePicker
-                        className='field'
-                        selected={plantDate} 
-                        onChange={setPlantDate}
-                        dateFormat='MMMM dd yyyy'
-                      />
-                    </div>
-                    <div className='field-wrap'>
-                      <label className='input-label'>Select date of first harvest</label>
-                      <DatePicker
-                        className='field'
-                        selected={firstHarvest} 
-                        onChange={setFirstHarvest}
-                        dateFormat='MMMM dd yyyy'
-                      />
-                    </div>
-                    <div className='field-wrap'>
-                      <label className='input-label'>Select date of last harvest</label>
-                      <DatePicker
-                        className='field'
-                        selected={lastHarvest} 
-                        onChange={setLastHarvest}
-                        dateFormat='MMMM dd yyyy'
-                      />
-                    </div>
-                    <textarea
-                      placeholder="add some notes..."
-                      value={notes}
-                      name='notes'
-                      onChange={handleInputChange}
-                      type='text'
-                      className='notes-input'
-                    ></textarea>
-                    <button className="btn btn-primary" onClick={handleClose}>Submit</button>
                   </div>
-                </form>
-              </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClose}>Close</button>
-                <button type="button" className="btn btn-primary" onClick={handleClose}>Save changes</button>
-              </div>
+                  <div className='field-wrap'>
+                    <label className='input-label'>Select planting date</label>
+                    <DatePicker
+                      className='field'
+                      selected={plantDate} 
+                      onChange={setPlantDate}
+                      dateFormat='MMMM dd yyyy'
+                    />
+                  </div>
+                  <div className='field-wrap'>
+                    <label className='input-label'>Select date of first harvest</label>
+                    <DatePicker
+                      className='field'
+                      selected={firstHarvest} 
+                      onChange={setFirstHarvest}
+                      dateFormat='MMMM dd yyyy'
+                    />
+                  </div>
+                  <div className='field-wrap'>
+                    <label className='input-label'>Select date of last harvest</label>
+                    <DatePicker
+                      className='field'
+                      selected={lastHarvest} 
+                      onChange={setLastHarvest}
+                      dateFormat='MMMM dd yyyy'
+                    />
+                  </div>
+                  <textarea
+                    placeholder="add some notes..."
+                    value={notes}
+                    name='notes'
+                    onChange={handleInputChange}
+                    type='text'
+                    className='notes-input'
+                  ></textarea>
+                  <button className="btn btn-primary" onClick={handleClose}>Submit</button>
+                </div>
+              </form>
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClose}>Close</button>
+              <button type="button" className="btn btn-primary" onClick={handleClose}>Save changes</button>
             </div>
           </div>
-        </Modal>
-      </div>
-    );
-  };
+        </div>
+      </Modal>
+    </div>
+  );
+};
 
 export default Profile;
