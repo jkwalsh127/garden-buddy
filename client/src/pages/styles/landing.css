@@ -35,8 +35,9 @@
   border: 1px solid var(--brown);
   padding: 5px;
   border-radius: 10px;
-  box-shadow: 15px 10px 2px 1px rgb(195, 120, 87);
+  box-shadow: 10px 10px 2px 1px rgba(195, 119, 87, 0.785);
   width: 550px;
+  background-color: var(--light-white);
 }
 .about-text {
   color: var(--brown);
