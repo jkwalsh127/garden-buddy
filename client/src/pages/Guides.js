@@ -2,11 +2,7 @@ import React from 'react';
 import './styles/guides.css';
 import { Link } from 'react-router-dom';
 import vegetables from './images/vegetables.jpg';
-import Beets from '../components/Beets';
-import Tomatoes from '../components/Tomatoes';
-import Eggplants from '../components/Eggplants';
-import Carrots from '../components/Carrots';
-import Asparagus from '../components/Asparagus';
+
 
 export default function Guides() {
     return (

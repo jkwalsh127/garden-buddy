@@ -11,7 +11,7 @@ import zone7 from './images/zone-7.jpg';
 import zone8 from './images/zone-8.jpg';
 import zone9 from './images/zone-9.jpg';
 import zone10 from './images/zone-10.jpg';
-
+import Auth from '../utils/auth';
 
 export default function Schedule() {
 
