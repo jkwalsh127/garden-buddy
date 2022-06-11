@@ -70,12 +70,12 @@ function App() {
                     element={<Landing />}
                   />
                   <Route 
-                      path="/login" 
-                      element={<Login />}
+                    path="/login" 
+                    element={<Login />}
                   />
                   <Route 
-                  path="/signup" 
-                  element={<Signup />}
+                    path="/signup" 
+                    element={<Signup />}
                   />
                   <Route 
                       path="/findzone" 
