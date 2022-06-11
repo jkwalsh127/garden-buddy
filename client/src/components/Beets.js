@@ -1,9 +1,6 @@
 import React from 'react';
 import './styles/guides.css';
-<<<<<<< HEAD
-=======
 import { Link } from 'react-router-dom';
->>>>>>> 410fa9f3ba57574a4ae0946d4151b417cb945055
 import beets from '../pages/images/rainbow-beets.jpg';
 
 export default function Beets() {
