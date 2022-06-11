@@ -8,10 +8,8 @@ import birdRight from './images/bird-right.png';
 import tomatoesLeft from './images/tomatoes-left.png';
 import tomatoesRight from './images/tomatoes-right.png';
 
+
 const Profile = () => {
-
-
-
     return (
       <div className='gardens-wrap'>
         <div className='head-wrap'>
