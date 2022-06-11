@@ -1,21 +1,41 @@
-import React, { useState } from 'react';
+import React, { useReducer, useState } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_GARDENS } from '../utils/queries';
-import { QUERY_ME } from '../utils/queries';
 import { ADD_GARDEN } from '../utils/mutations';
+import { REMOVE_GARDEN } from '../utils/actions';
+
+
 import './styles/gardentable.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
+import reducer from '../utils/reducer';
+
+import { useGardenContext } from '../utils/GardenContext';
+
+
+
 const GardenTable = () => {
 
-    const { loading, data } = useQuery(QUERY_GARDENS);
-    const gardenList = data?.gardens || [];
+  const { loading, data } = useQuery(QUERY_GARDENS);
+  const gardenList = data?.gardens || [];
+
+  const initialState = useGardenContext();
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+
+    // const handleClick = (id) => {
+    //   dispatch({
+    //     type: UPDATE_CURRENT_GARDEN,
+    //     currentGarden: id,
+    //   });
+    // };
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -44,17 +64,14 @@ const GardenTable = () => {
           console.error(e);
         }
   
-        // update me object's cache
-        // const { me } = cache.readQuery({ query: QUERY_ME });
-        // cache.writeQuery({
-        //   query: QUERY_ME,
-        //   data: { me: { ...me, gardens: [...me.gardens, addGarden] } },
-        // });
       },
     });
 
     const handleAddGarden = async (e) => {
       e.preventDefault();
+
+      const plantDateString = JSON.stringify(plantDate);
+      const plantDateSlice = plantDateString.slice(0,11);
 
       try {
         const { data } = await addGarden({
@@ -63,7 +80,7 @@ const GardenTable = () => {
             variety,
             startedAs,
             sowDate,
-            plantDate,
+            plantDateSlice,
             firstHarvest,
             lastHarvest,
             notes
@@ -122,6 +139,18 @@ const GardenTable = () => {
                         </button>
                         <button onClick={handleShow} className='button'>
                             <FontAwesomeIcon icon={faPlusCircle} />
+                        </button>
+                        <button 
+                          type="button"
+                          onClick={() => {
+                            // The remove student action will return a new copy of state with an updated students array after the `id` has been filtered from the array
+                            return dispatch({
+                              type: REMOVE_GARDEN,
+                              payload: garden.id,
+                            });
+                          }}
+                        >
+                          <FontAwesomeIcon icon={faTrash} />
                         </button>
                     </td>
                     <td className='inner-cells'>

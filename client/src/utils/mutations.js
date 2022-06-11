@@ -58,19 +58,3 @@ mutation addGarden($vegetable: String!, $variety: String, $startedAs: String, $s
 //         }
 //     }    
 // `;
-
-// export const UPDATE_GARDEN = gql`
-//     mutation updateGarden($vegetable: String!, $variety: String, $startedAs: String, $sowDate: String, $plantDate: String, $firstHarvest: String, $lastHarvest: String, $notes: String) {
-//       updateGarden(vegetable: $vegetable, variety: $variety, startedAs: $startedAs, sowDate: $sowDate, plantDate: $plantDate, firstHarvest: $firstHarvest, lastHarvest: $lastHarvest, notes: $notes) {
-//         _id
-//         vegetable
-//         variety
-//         startedAs
-//         sowDate
-//         plantDate
-//         firstHarvest
-//         lastHarvest
-//         notes
-//       }
-//     }
-// `;

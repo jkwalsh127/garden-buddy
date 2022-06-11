@@ -7,6 +7,8 @@ import birdLeft from './images/bird-left.png';
 import birdRight from './images/bird-right.png';
 import tomatoesLeft from './images/tomatoes-left.png';
 import tomatoesRight from './images/tomatoes-right.png';
+import { GardenProvider } from '../utils/GardenContext';
+
 
 const Profile = () => {
 
@@ -25,7 +27,9 @@ const Profile = () => {
           </div>
           <img src={tomatoesRight} alt="tomatoes" className='tomatoes'/>
         </div>
-        <GardenTable />
+        <GardenProvider>
+          <GardenTable />
+        </GardenProvider>
       </div>
     );
   };
