@@ -20,11 +20,12 @@
     width: 70%;
     min-height: 350px; 
     min-width: 525px;
+    max-width: 800px;
 }
 .hardiness-legend {
-    width: 15%;
     min-width: 115px; 
     min-height: 350px;
+    max-height: 500px;
 }
 .zip-input {
     height: 22px;
@@ -40,8 +41,9 @@
     font-weight: 600;
     margin: 0 0 0 10px;
 }
-.input-label {
+.input-head {
     margin: 0 0 10px 0;
+    width: 400px;
 }
 .zip-form {
     margin: 10px 0 0 0;
@@ -72,7 +74,6 @@
     justify-content: center;
     align-items: center;
     margin: 10px 0 20px 0;
-    height: fit-content;
 }
 .schedule-img {
     width: 80%;

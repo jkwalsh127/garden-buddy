@@ -1,274 +1,86 @@
-import React, { useReducer, useState } from 'react';
-import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_GARDENS } from '../utils/queries';
-import { ADD_GARDEN } from '../utils/mutations';
-import { REMOVE_GARDEN } from '../utils/actions';
-
-
-import './styles/gardentable.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
-import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { useQuery } from '@apollo/client';
+import { QUERY_GARDENS } from '../utils/queries';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './styles/gardentable.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Modal } from 'react-bootstrap';
-import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
-
-import reducer from '../utils/reducer';
-
-import { useGardenContext } from '../utils/GardenContext';
-
-
+import 'react-datepicker/dist/react-datepicker.css';
 
 const GardenTable = () => {
 
   const { loading, data } = useQuery(QUERY_GARDENS);
   const gardenList = data?.gardens || [];
 
-  const initialState = useGardenContext();
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-
-    // const handleClick = (id) => {
-    //   dispatch({
-    //     type: UPDATE_CURRENT_GARDEN,
-    //     currentGarden: id,
-    //   });
-    // };
-
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
-    const [vegetable, setVegetable] = useState('');
-    const [variety, setVariety] = useState('');
-    const [startedAs, setStartedAs] = useState('');
-    const [sowDate, setSowDate] = useState(new Date());
-    const [plantDate, setPlantDate] = useState(new Date());
-    const [firstHarvest, setFirstHarvest] = useState(new Date());
-    const [lastHarvest, setLastHarvest] = useState(new Date());
-    const [notes, setNotes] = useState('');
-
-
-    const [addGarden, { error }] = useMutation(ADD_GARDEN, {
-      update(cache, { data: { addGarden } }) {
-        try {
-          const { gardens } = cache.readQuery({ query: QUERY_GARDENS });
-  
-          cache.writeQuery({
-            query: QUERY_GARDENS,
-            data: { gardens: [addGarden, ...gardens] },
-          });
-        } catch (e) {
-          console.error(e);
-        }
-  
-      },
-    });
-
-    const handleAddGarden = async (e) => {
-      e.preventDefault();
-
-      const plantDateString = JSON.stringify(plantDate);
-      const plantDateSlice = plantDateString.slice(0,11);
-
-      try {
-        const { data } = await addGarden({
-          variables: {
-            vegetable,
-            variety,
-            startedAs,
-            sowDate,
-            plantDateSlice,
-            firstHarvest,
-            lastHarvest,
-            notes
-          },
-        });
-
-        setVegetable('');
-        setVariety('');
-        setNotes('');
-        window.location.reload();
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
-    const handleInputChange = (event) => {
-      const { name, value } = event.target;
-
-      if (name === 'vegetable') {
-        setVegetable(value);
-      } else if (name === 'variety') {
-        setVariety(value);
-      } else if (name === 'startedAs') {
-        setStartedAs(value);
-      } else {
-        setNotes(value);
-      }
-    };
-
-    return (
-        <>
-        <div className='table-wrap'>
-          {loading ? (
-            <div>Loading...</div>
-              ) : (
-            <table>
-              <thead>
-                <tr>
-                  <th>Actions</th>
-                  <th>Vegetable</th>
-                  <th>variety</th>
-                  <th>Sow Date</th>
-                  <th>Plant Date</th>
-                  <th>First Harvest</th>
-                  <th>Last Harvest</th>
-                  <th className='notes'>Notes</th>
-                </tr>
-              </thead>
-              <tbody>
-              {gardenList.map((garden) => {
-                return (
-                  <tr key={garden._id} value={garden.vegetable}>
-                    <td className='actions'>
-                        <button onClick={handleShow} className='button'>
-                            <FontAwesomeIcon icon={faEdit} />
-                        </button>
-                        <button onClick={handleShow} className='button'>
-                            <FontAwesomeIcon icon={faPlusCircle} />
-                        </button>
-                        <button 
-                          type="button"
-                          onClick={() => {
-                            // The remove student action will return a new copy of state with an updated students array after the `id` has been filtered from the array
-                            return dispatch({
-                              type: REMOVE_GARDEN,
-                              payload: garden.id,
-                            });
-                          }}
-                        >
-                          <FontAwesomeIcon icon={faTrash} />
-                        </button>
-                    </td>
-                    <td className='inner-cells'>
-                      {garden.vegetable}
-                    </td>
-                    <td className='inner-cells'>
-                      {garden.variety}
-                    </td>
-                    <td className='inner-cells'>
-                      {garden.sowDate}
-                    </td>
-                    <td className='inner-cells'>
-                      {garden.plantDate}
-                    </td>
-                    <td className='inner-cells'>
-                      {garden.firstHarvest}
-                    </td>
-                    <td>
-                      {garden.lastHarvest}
-                    </td>
-                    <td className='notes-data'>
-                      {garden.notes}
-                    </td>
-                  </tr>
-                );
-              })}
-              </tbody>
-            </table>
-          )}
-        </div>
-        <Modal className="modal-dialog modal-dialog-centered modal-dialog-scrollable" show={show}>
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">Modal title</h5>
-                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={handleClose}></button>
-              </div>
-              <div className="modal-body">
-                <form onSubmit={handleAddGarden}>
-                  <div className="form-group">
-                    <input
-                      value={vegetable}
-                      name='vegetable'
-                      onChange={handleInputChange}
-                      type='text'
-                      placeholder='Vegetable'
-                    />
-                    <input
-                      value={variety}
-                      name='variety'
-                      onChange={handleInputChange}
-                      type='text'
-                      placeholder='Variety'
-                    />
-                    <input
-                      value={startedAs}
-                      name='startedAs'
-                      onChange={handleInputChange}
-                      type='text'
-                      placeholder='Started as'
-                    />
-                    <div className='field-wrap'>
-                      <label className='input-label'>Select sowing date</label>
-                      <DatePicker 
-                        className='field'
-                        selected={sowDate} 
-                        onChange={setSowDate}
-                        dateFormat='MMMM dd yyyy'
-                      />
-                    </div>
-                    <div className='field-wrap'>
-                      <label className='input-label'>Select planting date</label>
-                      <DatePicker
-                        className='field'
-                        selected={plantDate} 
-                        onChange={setPlantDate}
-                        dateFormat='MMMM dd yyyy'
-                      />
-                    </div>
-                    <div className='field-wrap'>
-                      <label className='input-label'>Select date of first harvest</label>
-                      <DatePicker
-                        className='field'
-                        selected={firstHarvest} 
-                        onChange={setFirstHarvest}
-                        dateFormat='MMMM dd yyyy'
-                      />
-                    </div>
-                    <div className='field-wrap'>
-                      <label className='input-label'>Select date of last harvest</label>
-                      <DatePicker
-                        className='field'
-                        selected={lastHarvest} 
-                        onChange={setLastHarvest}
-                        dateFormat='MMMM dd yyyy'
-                      />
-                    </div>
-                    <textarea
-                      placeholder="add some notes..."
-                      value={notes}
-                      name='notes'
-                      onChange={handleInputChange}
-                      type='text'
-                      className='notes-input'
-                    ></textarea>
-                    <button className="btn btn-primary" onClick={handleClose}>Submit</button>
-                  </div>
-                </form>
-              </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClose}>Close</button>
-                <button type="button" className="btn btn-primary" onClick={handleClose}>Save changes</button>
-              </div>
-            </div>
-          </div>
-        </Modal>
-    </>
-    )
+  return (
+    <div className='table-wrap'>
+      {loading ? (
+        <span>Loading...</span>
+         ) : (
+        <table>
+          <thead>
+            <tr>
+              <th className='actions'>Actions</th>
+              <th>Vegetable</th>
+              <th>Variety</th>
+              <th>Started As</th>
+              <th>Sow Date</th>
+              <th>Plant Date</th>
+              <th>First Harvest</th>
+              <th>Last Harvest</th>
+              <th className='notes'>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+          {gardenList.map((garden) => {
+            return (
+              <tr key={garden._id} value={garden.vegetable}>
+                <td className='actions'>
+                  <button className='button'>
+                      <FontAwesomeIcon icon={faEdit} />
+                  </button>
+                  <button 
+                    type="button"
+                    onClick={() => {
+                      console.log('clicked!');
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faTrash} />
+                  </button>
+                </td>
+                <td className='inner-cells'>
+                  {garden.vegetable}
+                </td>
+                <td className='inner-cells'>
+                  {garden.variety}
+                </td>
+                <td className='inner-cells'>
+                  {garden.startedAs}
+                </td>
+                <td className='inner-cells'>
+                  {garden.sowDate}
+                </td>
+                <td className='inner-cells'>
+                  {garden.plantDate}
+                </td>
+                <td className='inner-cells'>
+                  {garden.firstHarvest}
+                </td>
+                <td className='inner-cells'>
+                  {garden.lastHarvest}
+                </td>
+                <td className='notes-data'>
+                  {garden.notes}
+                </td>
+              </tr>
+            );
+          })}
+          </tbody>
+        </table>
+      )}
+    </div>
+  )
 };
 
 export default GardenTable;

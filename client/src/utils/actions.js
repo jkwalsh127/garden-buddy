@@ -1,3 +1,0 @@
-export const UPDATE_GARDEN = "UPDATE_GARDEN";
-
-export const REMOVE_GARDEN = 'REMOVE_GARDEN';

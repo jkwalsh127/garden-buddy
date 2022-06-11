@@ -2,18 +2,19 @@
   display: flex;
   justify-content: center;
 }
-
 table, th, td {
   border: 1px solid var(--green);
   padding: 5px;
   overflow-wrap: normal;
+  box-sizing: initial;
 }
 table {
   border-collapse: collapse;
   margin: 10px 0 0 0;
+  max-width: 90%;
 }
 th {
-  min-width: 115px;
+  min-width: 90px;
   color: var(--light-white);
   background-color: var(--green);
 }
@@ -21,13 +22,11 @@ td {
   background-color: var(--light-white);
 }
 .actions {
-  width: 100px;
+  max-width: 80px;
 }
 .inner-cells {
-  min-width: 115px;
-  width: 10%;
+  max-width: 130px;
 }
-
 .button {
   margin: 0 3px;
 }
@@ -39,6 +38,8 @@ td {
   width: 200px;
 }
 
+
+/* modal */
 .field-wrap {
     display: flex;
 }

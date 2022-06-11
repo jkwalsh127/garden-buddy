@@ -16,12 +16,6 @@ import herbRight from './images/herbs-right.png';
 import leafLeft from './images/leaf-left.png';
 import leafRight from './images/leaf-right.png';
 
-
-// const client = new ApolloClient({
-//   uri: '/graphql',
-//   cache: new InMemoryCache(),
-// });
-
 const httpLink = createHttpLink({
   uri: '/graphql',
 });

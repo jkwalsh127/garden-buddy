@@ -12,7 +12,6 @@ import zone8 from './images/zone-8.jpg';
 import zone9 from './images/zone-9.jpg';
 import zone10 from './images/zone-10.jpg';
 
-
 export default function Schedule() {
 
     const [zipCode, setZipCode] = useState('');
@@ -50,7 +49,7 @@ export default function Schedule() {
 
         let result = await fetchZone(zipCode);
 
-        setGrowZone(result.zone);
+        setGrowZone("Your growing zone is:" + result.zone);
         setZipCode('');
         setErrorMessage('');
         setScheduleLabel('Here is the planting schedule for your zone:');
@@ -87,7 +86,7 @@ export default function Schedule() {
             <img src={hardinessLegend} alt='hardiness legend' className='hardiness-legend'></img>
         </div>
         <div className='inputContainer'>
-            <label className='input-label'>Enter your zipcode to discover a planting schedule based on your Growing Zone</label>
+            <label className='input-head'>Enter your zipcode to discover a planting schedule based on your Growing Zone</label>
             <form className='zip-form'>
                 <input 
                     value={zipCode}
@@ -109,7 +108,7 @@ export default function Schedule() {
 
         </div>
         <div className='resultsContainer'> 
-            <h2 className='results-label'>Your growing zone is: {growZone}</h2>
+            <h2 className='results-label'>{growZone}</h2>
             <h3 className='schedule-label'>{scheduleLabel}</h3>
         </div>
         <div className='schedule-container'> 
