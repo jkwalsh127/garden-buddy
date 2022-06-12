@@ -23,7 +23,7 @@ export default function Landing() {
                     </p>
                     <ul className='description-list'>
                         <li>Use our app to:</li>
-                        <li className='li'>Discover planting scheduels specific to your region</li>
+                        <li className='li'>Discover planting schedules specific to your region</li>
                         <li className='li'>Use our guides to learn to care for each veggie</li>
                         <li className='li'>Save dates and notes to make your garden better every year</li>
                     </ul>
