@@ -55,16 +55,14 @@ const Login = (props) => {
               </>
             ) : (
               <form onSubmit={handleFormSubmit} className='form-wrap'>
-                <label>Login</label>
                 <input
-                  className="login-input"
+                  className="login-input font-title"
                   placeholder="Your email"
                   name="email"
                   type="email"
                   value={formState.email}
                   onChange={handleChange}
                 />
-                <label>Password</label>
                 <input
                   className="login-input"
                   placeholder="******"
