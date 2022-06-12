@@ -9,7 +9,6 @@ import Auth from '../utils/auth';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    username: '',
     email: '',
     password: '',
   });
@@ -53,14 +52,6 @@ const Signup = () => {
               </p>
             ) : (
               <form onSubmit={handleFormSubmit} className='form-wrap'>
-                <input
-                  className="login-input font-title"
-                  placeholder="Your username"
-                  name="Username"
-                  type="text"
-                  value={formState.username}
-                  onChange={handleChange}
-                />
                 <input
                   className="login-input font-title"
                   placeholder="Your email"
