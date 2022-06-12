@@ -4,8 +4,6 @@ import fruits from './images/fruits.jpg';
 import { Link } from 'react-router-dom';
 import flowersLeft from './images/flowers-left.png';
 import flowersRight from './images/flowers-right.png';
-import butterflyLeft from './images/butterfly-left.png';
-import butterflyRight from './images/butterfly-right.png';
 
 export default function Landing() {
     return (
@@ -14,9 +12,7 @@ export default function Landing() {
             <div className='head-wrap'>
                 <img src={flowersLeft} alt="flowers" className='flowers'/>
                 <div className='title-wrap-landing'>
-                    {/* <img src={butterflyLeft} alt="butterflies" className='butterflies'/> */}
                     <h1 className='landing-title'>Welcome!</h1>
-                    {/* <img src={butterflyRight} alt="butterflies" className='butterflies'/> */}
                 </div>
                 <img src={flowersRight} alt="flowers" className='flowers'/>
             </div>

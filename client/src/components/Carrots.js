@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/guides.css';
+import '../pages/styles/guides.css';
 import { Link } from 'react-router-dom';
 import carrot from '../pages/images/carrot.jpg';
 
