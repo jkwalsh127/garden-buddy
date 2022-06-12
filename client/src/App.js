@@ -1,6 +1,6 @@
 import React from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { setContext } from '@apollo/client/link/context';
 import './App.css';
 import { NavLink } from 'react-router-dom';
@@ -70,12 +70,12 @@ function App() {
                     element={<Landing />}
                   />
                   <Route 
-                      path="/login" 
-                      element={<Login />}
+                    path="/login" 
+                    element={<Login />}
                   />
                   <Route 
-                  path="/signup" 
-                  element={<Signup />}
+                    path="/signup" 
+                    element={<Signup />}
                   />
                   <Route 
                       path="/findzone" 
@@ -108,6 +108,10 @@ function App() {
                   <Route 
                       path="/gardens" 
                       element={<Gardens />}
+                  />
+                  <Route 
+                      path="*" 
+                      element={<Landing />}
                   />
                 </Routes>
                 <div className='lower-imgs'>

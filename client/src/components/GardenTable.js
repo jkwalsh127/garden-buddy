@@ -37,15 +37,10 @@ const GardenTable = () => {
             return (
               <tr key={garden._id} value={garden.vegetable}>
                 <td className='actions'>
-                  <button className='button'>
+                  <button className='btn'>
                       <FontAwesomeIcon icon={faEdit} />
                   </button>
-                  <button 
-                    type="button"
-                    onClick={() => {
-                      console.log('clicked!');
-                    }}
-                  >
+                  <button className='btn'>
                     <FontAwesomeIcon icon={faTrash} />
                   </button>
                 </td>

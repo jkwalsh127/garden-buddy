@@ -92,7 +92,7 @@ const Profile = () => {
   return (
     <div className='gardens-wrap'>
       <div className='head-wrap'>
-        <img src={tomatoesLeft} alt="birds" className='tomatoes'/>
+        <img src={tomatoesLeft} alt="tomatoes" className='tomatoes'/>
         <div className='title-wrap-gardens'>
           <img src={birdLeft} alt="birds" className='birds'/>
           <h1 className='page-title font-title'>My Gardens</h1>
@@ -100,7 +100,7 @@ const Profile = () => {
         </div>
         <img src={tomatoesRight} alt="tomatoes" className='tomatoes'/>
       </div>
-      <button onClick={handleShow} className='button'>
+      <button onClick={handleShow} className='garden-btn'>
         Add Garden
       </button>
       <GardenTable />

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
+import './styles/login.css';
 
 import Auth from '../utils/auth';
 
@@ -41,21 +42,21 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
+    <main className="login-container">
         <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
+          <h4 className="card-head">Login</h4>
           <div className="card-body">
             {data ? (
-              <><p>
-                Success!You may now {' '}
-                <Link to="/gardens">access Garden Buddy.</Link>
-              </p>
+              <>
+                <p>
+                  Success!You may now {' '}
+                  <Link to="/gardens">access Garden Buddy.</Link>
+                </p>
               </>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+              <form onSubmit={handleFormSubmit} className='form-wrap'>
                 <input
-                  className="form-input"
+                  className="login-input font-title"
                   placeholder="Your email"
                   name="email"
                   type="email"
@@ -63,7 +64,7 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
                 <input
-                  className="form-input"
+                  className="login-input"
                   placeholder="******"
                   name="password"
                   type="password"
@@ -71,12 +72,12 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-info"
+                  className="login-btn"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                   to="/gardens"
                 >
-                  Submit
+                  Login
                 </button>
               </form>
             )}
@@ -88,7 +89,6 @@ const Login = (props) => {
             )}
           </div>
         </div>
-      </div>
     </main>
   );
 };

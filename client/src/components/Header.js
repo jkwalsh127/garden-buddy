@@ -28,7 +28,7 @@ const Header = () => {
               Grow Guides
             </NavLink>
             <NavLink style={navLinkStyles} className="nav-link" to="/gardens">
-              View Profile
+              View Gardens
             </NavLink>
             <NavLink style={navLinkStyles} className="nav-link" onClick={logout} to="/login">
                 Logout

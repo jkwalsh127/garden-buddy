@@ -1,12 +1,24 @@
 import React from 'react';
-import './styles/guides.css';
+import '../pages/styles/guides.css';
 import { Link } from 'react-router-dom';
 import carrot from '../pages/images/carrot.jpg';
+import tomatoesLeft from '../pages/images/tomatoes-left.png';
+import tomatoesRight from '../pages/images/tomatoes-right.png';
+import butterflyLeft from '../pages/images/butterfly-left.png';
+import butterflyRight from '../pages/images/butterfly-right.png';
 
 export default function Carrots() {
     return (
             <>
-            <h1 className='page-title'>Growing Guides</h1>
+            <div className='guide-wrap'>
+                <img src={tomatoesLeft} alt="tomatoes" className='tomatoes'/>
+                <div className='title-wrap-guides'>
+                    <img src={butterflyLeft} alt="butterfly" className='butterfly'/>
+                    <h1 className='guides-title font-title'>Grow Guides</h1>
+                    <img src={butterflyRight} alt="butterfly" className='butterfly'/>
+                </div>
+                <img src={tomatoesRight} alt="tomatoes" className='tomatoes'/>
+            </div>
             <h2 className='veggie-title'>Carrots</h2>
             <div className='content-wrap'>
             <div className='list-wrap'>
@@ -60,9 +72,6 @@ export default function Carrots() {
                     </div>
                     <div className='description-wrap'>
                         <img className='veggie-img' src={carrot} alt='tomato plant'></img>
-                        <p className='description'>
-                           Carrots can be used for a variety of reasons.
-                        </p>
                     </div>
                 </div>
             </div>

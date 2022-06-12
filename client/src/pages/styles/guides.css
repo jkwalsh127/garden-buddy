@@ -1,30 +1,108 @@
-.content-wrap {
-    display: flex;
-    width: 100%;
-    background-color: var(--dark-white);
-    align-items: center;
-}
-.list-wrap {
-    width: 20%;
-    max-width: 200px;
-    background-color: var(--dark-white);
-    display: flex;
-    justify-content: center;
-}
 .veggie-list {
     list-style: none;
-    padding: 0 5px;
+    padding: 20px 15px 0 15px;
     background-color: var(--light-white);
+    height: 450px;
+    margin: 20px 0;
+    width: 100%;
+    border: 1px solid var(--green);
 }
 .list-title {
     font-size: 24px;
+    color: var(--green);
+    margin: 0 0 20px 0;
 }
 .veggie {
     font-size: 20px;
     font-weight: 300;
 }
 .veggie-link {
-    color: black;
+    color: var(--green);
+    font-weight: bold;
+    text-decoration: none;
+}
+.veggie-link:hover {
+    color: var(--brown);
+}
+.veggie-title {
+    margin: 20px 0 10px 0;
+    color: var(--brown);
+    font-weight: bold;
+}
+.guide-wrap {
+    width: 80%;
+    display: flex;
+}
+.detail-wrap {
+    width: 160px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+.detail-list {
+    list-style: none;
+    margin: 0 50px;
+    padding: 10px 0 0 0;
+}
+.detail-label {
+    font-weight: 700;
+    color: var(--green);
+}
+.detail {
+    font-size: 14px;
+    padding: 5px 0 15px 0;
+}
+
+
+
+
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+.guide-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.tomatoes {
+    height: 150px;
+    width: 174px;
+}
+.title-wrap-guides {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    padding: 0;
+    margin: 30px 0 0 0;
+}
+.butterfly {
+    height: 40px;
+}
+.guides-title {
+    padding: 0 0 0 5px;
+    color: var(--green);
+}
+.content-wrap {
+    display: flex;
+    width: 95%;
+    align-items: center;
+    margin: 10px 0 10px 0;
+}
+.list-wrap {
+    width: 20%;
+    max-width: 200px;
+    display: flex;
+    justify-content: center;
+}
+.veggie {
+    font-size: 20px;
+    font-weight: 300;
 }
 .veggie-title {
     margin: 20px 0 10px 0;
@@ -41,11 +119,6 @@
     display: flex;
     align-items: center;
 }
-.detail-list {
-    list-style: none;
-    margin: 0;
-    padding: 10px 0 0 0;
-}
 .detail-label {
     font-weight: 700;
     color: var(--green);
@@ -56,16 +129,25 @@
 }
 .description-wrap {
     max-width: 70%;
-    margin: 0 5% 0 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
 }
-.veggie-img {
-    width: 80%;
-    padding: 10px 0 0 0;
+.veggie-landing-img {
+    width: 500px;
+    align-items: center;
+    border-radius: 10px;
+    margin: 0 0 40px 0;
 }
 .description {
-    word-wrap: normal;
+    width: 400px;
+    color: var(--green);
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px 0 10px 0;
+}
+.veggie-img {
+    height: 400px;
 }

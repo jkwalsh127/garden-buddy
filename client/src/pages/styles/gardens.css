@@ -27,3 +27,16 @@
 .tomatoes {
     height: 150px;
 }
+.garden-btn {
+    border-radius: 10px;
+    width: 150px;
+    background-color: var(--brown);
+    border: 2px solid var(--light-white);
+    color: var(--light-white);
+    font-weight: bold;
+}
+.garden-btn:hover {
+    background-color: var(--light-white);
+    color: var(--brown);
+    border: 2px solid var(--brown);
+}
