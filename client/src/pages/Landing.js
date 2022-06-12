@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/landing.css';
-import fruits from './images/fruits.jpg';
+
 import { Link } from 'react-router-dom';
 import flowersLeft from './images/flowers-left.png';
 import flowersRight from './images/flowers-right.png';
