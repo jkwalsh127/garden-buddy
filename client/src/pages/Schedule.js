@@ -76,8 +76,6 @@ export default function Schedule() {
         setSchedule(zone10);
         }
       };
-    
-
 
   return (
     <>
