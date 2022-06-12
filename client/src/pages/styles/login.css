@@ -31,3 +31,7 @@
     color: var(--green);
     font-weight: bold;
 }
+.login-btn:hover {
+    background-color: var(--green);
+    color: var(--light-white);
+}

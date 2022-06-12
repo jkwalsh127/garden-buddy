@@ -77,7 +77,10 @@
   text-decoration: none;
   margin: 0 20px;
 }
-
+.button:hover {
+  background-color: #808c6cdc;
+  color: var(--dark-white);
+}
 .fruits {
   margin-top: 5%;
   align-self: center;
