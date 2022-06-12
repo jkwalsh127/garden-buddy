@@ -12,6 +12,7 @@ import DatePicker from 'react-datepicker';
 import { ADD_GARDEN } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import { QUERY_GARDENS } from '../utils/queries';
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
 
@@ -44,6 +45,7 @@ const Profile = () => {
     },
   });
 
+  const navigate = useNavigate();
   const handleAddGarden = async (e) => {
     e.preventDefault();
 
@@ -69,7 +71,7 @@ const Profile = () => {
       setVegetable('');
       setVariety('');
       setNotes('');
-      window.location.reload();
+      navigate("/gardens");
     } catch (err) {
       console.error(err);
     }
