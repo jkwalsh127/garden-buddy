@@ -11,6 +11,10 @@ import zone7 from './images/zone-7.jpg';
 import zone8 from './images/zone-8.jpg';
 import zone9 from './images/zone-9.jpg';
 import zone10 from './images/zone-10.jpg';
+import tomatoesLeft from './images/tomatoes-left.png';
+import tomatoesRight from './images/tomatoes-right.png';
+import beesLeft from './images/bees-left.png';
+import beesRight from './images/bees-right.png';
 
 export default function Schedule() {
    
@@ -77,7 +81,15 @@ export default function Schedule() {
 
   return (
     <>
-        <h1 className='page-title'>Find my planting schedule</h1>
+        <div className='head-wrap'>
+            <img src={tomatoesLeft} alt="tomatoes" className='tomatoes'/>
+                <div className='title-wrap-schedule'>
+                    <img src={beesLeft} alt="bees" className='bees'/>
+                    <h1 className='schedule-title'>Find your planting schedule</h1>
+                    <img src={beesRight} alt="bees" className='bees'/>
+                </div>
+            <img src={tomatoesRight} alt="tomatoes" className='tomatoes'/>
+        </div>
         <p className='zone-description'>
             The 2012 USDA Plant Hardiness Zone Map is the standard by which gardeners and growers can determine which plants are most likely to thrive at a location. The map is based on the average annual minimum winter temperature, divided into 10-degree F zones.
         </p>
@@ -85,7 +97,7 @@ export default function Schedule() {
             <img src={hardinessIMG} alt='hardiness zones' className='hardiness-map'></img>
             <img src={hardinessLegend} alt='hardiness legend' className='hardiness-legend'></img>
         </div>
-        <div className='inputContainer'>
+        <div className='input-container'>
             <label className='input-head'>Enter your zipcode to discover a planting schedule based on your Growing Zone</label>
             <form className='zip-form'>
                 <input 
@@ -105,7 +117,6 @@ export default function Schedule() {
                     )}
                 </div>
             </form>
-
         </div>
         <div className='resultsContainer'> 
             <h2 className='results-label'>{growZone}</h2>

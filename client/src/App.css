@@ -67,6 +67,7 @@ html {
 }
 .inner-container {
   width: 90%;
+  max-width: 1150px;
   background-color: white;
   display: flex;
   flex-direction: column;
