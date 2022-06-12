@@ -42,7 +42,7 @@
 }
 .detail-list {
     list-style: none;
-    margin: 0;
+    margin: 0 50px;
     padding: 10px 0 0 0;
 }
 .detail-label {
@@ -119,11 +119,6 @@
     display: flex;
     align-items: center;
 }
-.detail-list {
-    list-style: none;
-    margin: 0;
-    padding: 10px 0 0 0;
-}
 .detail-label {
     font-weight: 700;
     color: var(--green);
@@ -152,4 +147,7 @@
     font-weight: bold;
     font-size: 20px;
     margin: 10px 0 10px 0;
+}
+.asparagus-img {
+    height: 400px;
 }
