@@ -45,7 +45,7 @@ export default function Guides() {
                     <p className='description'>
                         Click any of the links on the left to access the growing guide for that vegetable. 
                     </p>
-                    <img className='veggie-img' src={vegetables} alt='tomato plant'></img>
+                    <img className='veggie-landing-img' src={vegetables} alt='tomato plant'></img>
                 </div>
             </div>
         </>

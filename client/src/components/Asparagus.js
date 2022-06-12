@@ -71,10 +71,7 @@ export default function Asparagus() {
                         </ul>
                     </div>
                     <div className='description-wrap'>
-                        <img className='asparagus-img' src={asparagus} alt='tomato plant'></img>
-                        <p className='description'>
-                            Asparagus can be used for a variety of things. 
-                        </p>
+                        <img className='veggie-img' src={asparagus} alt='tomato plant'></img>
                     </div>
                 </div>
             </div>

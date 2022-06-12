@@ -135,7 +135,7 @@
     justify-content: center;
     margin: 0 auto;
 }
-.veggie-img {
+.veggie-landing-img {
     width: 500px;
     align-items: center;
     border-radius: 10px;
@@ -148,6 +148,6 @@
     font-size: 20px;
     margin: 10px 0 10px 0;
 }
-.asparagus-img {
+.veggie-img {
     height: 400px;
 }
