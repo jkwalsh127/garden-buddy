@@ -83,7 +83,7 @@ export default function Schedule() {
             <img src={tomatoesLeft} alt="tomatoes" className='tomatoes'/>
                 <div className='title-wrap-schedule'>
                     <img src={beesLeft} alt="bees" className='bees'/>
-                    <h1 className='schedule-title'>Find your planting schedule</h1>
+                    <h1 className='schedule-title font-title'>Find your planting schedule</h1>
                     <img src={beesRight} alt="bees" className='bees'/>
                 </div>
             <img src={tomatoesRight} alt="tomatoes" className='tomatoes'/>

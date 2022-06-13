@@ -23,10 +23,10 @@ const Profile = () => {
   const [vegetable, setVegetable] = useState('');
   const [variety, setVariety] = useState('');
   const [startedAs, setStartedAs] = useState('');
-  const [sowDate, setSowDate] = useState(new Date());
-  const [plantDate, setPlantDate] = useState(new Date());
-  const [firstHarvest, setFirstHarvest] = useState(new Date());
-  const [lastHarvest, setLastHarvest] = useState(new Date());
+  const [sowDate, setSowDate] = useState('');
+  const [plantDate, setPlantDate] = useState('');
+  const [firstHarvest, setFirstHarvest] = useState('');
+  const [lastHarvest, setLastHarvest] = useState('');
   const [notes, setNotes] = useState('');
 
   const [addGarden] = useMutation(ADD_GARDEN, {
@@ -97,7 +97,7 @@ const Profile = () => {
         <img src={tomatoesLeft} alt="tomatoes" className='tomatoes'/>
         <div className='title-wrap-gardens'>
           <img src={birdLeft} alt="birds" className='birds'/>
-          <h1 className='page-title font-title'>My Gardens</h1>
+          <h1 className='gardens-title font-title'>My Gardens</h1>
           <img src={birdRight} alt="tomatoes" className='birds'/>
         </div>
         <img src={tomatoesRight} alt="tomatoes" className='tomatoes'/>
@@ -106,11 +106,9 @@ const Profile = () => {
         Add Garden
       </button>
       <GardenTable />
-      <Modal className="modal-dialog modal-dialog-centered modal-dialog-scrollable" show={show}>
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title">Modal title</h5>
+      <Modal className="modal-dialog modal-dialog-centered modal-dialog-scrollable modal" show={show}>
+            <div className="modal-head">
+              <h5 className="modal-head">New Garden</h5>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={handleClose}></button>
             </div>
             <div className="modal-body">
@@ -122,6 +120,7 @@ const Profile = () => {
                     onChange={handleInputChange}
                     type='text'
                     placeholder='Vegetable'
+                    className='input'
                   />
                   <input
                     value={variety}
@@ -129,6 +128,7 @@ const Profile = () => {
                     onChange={handleInputChange}
                     type='text'
                     placeholder='Variety'
+                    className='input'
                   />
                   <input
                     value={startedAs}
@@ -136,6 +136,7 @@ const Profile = () => {
                     onChange={handleInputChange}
                     type='text'
                     placeholder='Started as'
+                    className='input'
                   />
                   <div className='field-wrap'>
                     <label className='input-label'>Select sowing date</label>
@@ -174,23 +175,19 @@ const Profile = () => {
                     />
                   </div>
                   <textarea
-                    placeholder="add some notes..."
+                    placeholder="Add some notes..."
                     value={notes}
                     name='notes'
                     onChange={handleInputChange}
                     type='text'
                     className='notes-input'
                   ></textarea>
-                  <button className="btn btn-primary" onClick={handleClose}>Submit</button>
+                  <button className="modal-btn" onClick={handleClose}>
+                    Submit
+                  </button>
                 </div>
               </form>
-            </div>
-            <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClose}>Close</button>
-              <button type="button" className="btn btn-primary" onClick={handleClose}>Save changes</button>
-            </div>
           </div>
-        </div>
       </Modal>
     </div>
   );

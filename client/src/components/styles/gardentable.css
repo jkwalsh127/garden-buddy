@@ -37,22 +37,3 @@ td {
 .notes-data {
   width: 200px;
 }
-
-
-/* modal */
-.field-wrap {
-    display: flex;
-}
-.input-label {
-    width: 200px;
-    text-align: end;
-}
-.field {
-    width: 100px;
-}
-.react-datepicker-wrapper {
-    width: 150px;
-}
-.button {
-  background-color: var(--brown);
-}
