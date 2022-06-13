@@ -59,7 +59,7 @@ const Profile = () => {
           variety,
           startedAs,
           sowDate,
-          plantDateSlice,
+          plantDate,
           firstHarvest,
           lastHarvest,
           notes
