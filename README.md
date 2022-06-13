@@ -10,13 +10,13 @@ Garden Buddy, the app that grows with you!
 
 Once logged in, users have access to a multitude of features. Users can discover the zone that they live in, and receive a corresponding planting schedule for that zone. Users can view growing guides to create their own vegetable gardens. Users can add their own gardens, and view previous gardens to keep track of their planting. 
 
-[![Website preview](./assets/website.gif)](https://drive.google.com/file/d/1i0b9gy2KV9Qe3nwB-MOuDfU_tPDK0MtK/view)
+[![Website preview](./assets/website.gif)](https://drive.google.com/file/d/130vE2jyn35c1RlToIDKGQAdBS76uWBKk/view)
 
 ## Features
 
 SIGNUP: 
 
-[![Signup preview](./assets/signupGB.gif)](https://drive.google.com/file/d/1Hq_MBm9l_tRdZqb_NL-OzSPiiJd0Z1Ie/view)
+[![Signup preview](./assets/signupGB.gif)](https://drive.google.com/file/d/1WshQhHsPU9_x0CNxzRvp730wQ2oFHA9Y/view)
 
 Here, the signup mutation is executed, and a token is received. The token is then immediately stored using the AuthService functionality. 
 
@@ -24,7 +24,7 @@ Here, the signup mutation is executed, and a token is received. The token is the
 
 LOGIN: 
 
-[![Login preview](./assets/login.gif)](https://drive.google.com/file/d/1IKk8jzGzWvuEDFSPqDLs6HEbUluX7Tje/view)
+[![Login preview](./assets/login.gif)](https://drive.google.com/file/d/1ofYgHkS23hBWMJ9FMGgrC1mIWVZOYPhF/view)
 
 Here, the login mutation is executed, and in return, a token is received. The token is then immediately stored using the AuthService functionality. 
 
@@ -40,7 +40,7 @@ Here is the API call that fetches the specific zone the user lives in based on w
 
 GARDENS: 
 
-[![Gardens preview](./assets/gardens.gif)](https://drive.google.com/file/d/1RlA_JcLM0Ni6a5Oi2Ne2efDqngJDBxBE/view)
+[![Gardens preview](./assets/gardens.gif)](https://drive.google.com/file/d/10HjVt9_WaVicstN0mKxdOJyR2uKF3soi/view)
 
 Here, the gardens are being queried. 
 
