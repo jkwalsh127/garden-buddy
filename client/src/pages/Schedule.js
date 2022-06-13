@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './styles/schedule.css';
+import './styles/scheduleMediaQueries.css';
 import { validateZip } from '../utils/helpers';
 import hardinessIMG from './images/hardiness.jpeg';
 import hardinessLegend from './images/hardinessLegend.jpeg';
@@ -80,13 +81,13 @@ export default function Schedule() {
   return (
     <>
         <div className='head-wrap'>
-            <img src={tomatoesLeft} alt="tomatoes" className='tomatoes'/>
+            <img src={tomatoesLeft} alt="tomatoes" className='tomatoes-schedule'/>
                 <div className='title-wrap-schedule'>
                     <img src={beesLeft} alt="bees" className='bees'/>
                     <h1 className='schedule-title font-title'>Find your planting schedule</h1>
                     <img src={beesRight} alt="bees" className='bees'/>
                 </div>
-            <img src={tomatoesRight} alt="tomatoes" className='tomatoes'/>
+            <img src={tomatoesRight} alt="tomatoes" className='tomatoes-schedule'/>
         </div>
         <p className='zone-description'>
             The 2012 USDA Plant Hardiness Zone Map is the standard by which gardeners and growers can determine which plants are most likely to thrive at a location. The map is based on the average annual minimum winter temperature, divided into 10-degree F zones.

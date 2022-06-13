@@ -14,7 +14,7 @@
         margin: 5px 0 0 0;
     }
 }
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 600px) {
     .nav {
         flex-direction: column;
         flex-basis: 50%;

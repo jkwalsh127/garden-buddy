@@ -1,0 +1,73 @@
+@media screen and (max-width: 1025px) {
+    .schedule-title {
+        font-size: 30px;
+    }
+    .tomatoes-schedule {
+        height: 130px;
+    }
+}
+@media screen and (max-width: 880px) {
+    .tomatoes-schedule {
+        height: 120px;
+    }
+    .bees {
+        height: 35px;
+    }
+}
+@media screen and (max-width: 830px) {
+    .tomatoes-schedule {
+        height: 100px;
+    }
+    .bees {
+        margin: 0 0 60px 0;
+    }
+    .schedule-title {
+        width: 250px;
+    }
+}
+@media screen and (max-width: 660px) {
+    .tomatoes-schedule {
+        height: 90px;
+    }
+    .schedule-title {
+        font-size: 26px;
+        margin: 0 0 20px 0;
+        width: 220px;
+    }
+}
+@media screen and (max-width: 595px) {
+    .tomatoes-schedule {
+        height: 80px;
+    }
+    .schedule-title {
+        font-size: 22px;
+        width: 190px;
+    }
+}
+@media screen and (max-width: 540px) {
+    .tomatoes-schedule {
+        height: 80px;
+    }
+    .schedule-title {
+        font-size: 22px;
+        width: 190px;
+    }
+    .tomatoes-schedule {
+        display: none;
+    }
+    .title-wrap-schedule {
+        width: 100%;
+    }
+    .bees {
+        height: 30px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .schedule-title {
+        font-size: 20px;
+        width: 170px;
+    }
+    .bees {
+        height: 25px;
+    }
+}
