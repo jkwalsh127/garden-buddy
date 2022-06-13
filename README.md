@@ -6,7 +6,9 @@
 
 ## Description
 
-Garden Buddy, the app that grows with you! Once logged in, users have access to a multitude of features. Users can discover the zone that they live in, and receive a corresponding planting schedule for that zone. Users can view growing guides to create their own vegetable gardens. Users can add their own gardens, and view previous gardens to keep track of their planting. 
+Garden Buddy, the app that grows with you! 
+
+Once logged in, users have access to a multitude of features. Users can discover the zone that they live in, and receive a corresponding planting schedule for that zone. Users can view growing guides to create their own vegetable gardens. Users can add their own gardens, and view previous gardens to keep track of their planting. 
 
 [![Website preview](./assets/website.gif)](https://drive.google.com/file/d/1i0b9gy2KV9Qe3nwB-MOuDfU_tPDK0MtK/view)
 
@@ -56,7 +58,7 @@ Here, the components for the guides are linked to the main "Grow Guides" page.
 
 To access the website, follow the link.
 
-Users must first login or signup. To navigate the website, users can click the links in the navbar, and will be redirected to that specific feature's page. Once done, users can logout. 
+Users must first login or signup. To navigate the website, users can click the links in the navbar, and will be redirected to that specific feature's page. Users can add their own gardens, and view previous gardens to keep track of their planting.Users can discover the zone that they live in, and receive a corresponding planting schedule for that zone. Users can view growing guides to create their own vegetable gardens. Once done, users can logout. 
 
 ## Technologies
 
