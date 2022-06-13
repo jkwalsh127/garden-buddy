@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/landing.css';
+import './styles/landingMediaQueries.css';
 import { Link } from 'react-router-dom';
 import flowersLeft from './images/flowers-left.png';
 import flowersRight from './images/flowers-right.png';
@@ -21,7 +22,7 @@ export default function Landing() {
                         Garden buddy is a useful tool for anyone looking to grow some produce at home. 
                     </p>
                     <ul className='description-list'>
-                        <li>Use our app to:</li>
+                        <li className='list-head'>Use our app to:</li>
                         <li className='li'>Discover planting schedules specific to your region</li>
                         <li className='li'>Use our guides to learn to care for each veggie</li>
                         <li className='li'>Save dates and notes to make your garden better every year</li>

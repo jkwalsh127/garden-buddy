@@ -46,8 +46,11 @@
   width: 450px;
   margin: 0 auto;
 }
-.description-list {
+.list-head {
   list-style-type: none;
+}
+.description-list {
+  list-style-type:disc;
   text-align: start;
   margin: 10px 0 20px 20px;
   padding: 0;
@@ -81,14 +84,3 @@
   background-color: #808c6cdc;
   color: var(--dark-white);
 }
-.fruits {
-  margin-top: 5%;
-  align-self: center;
-  border-radius: 8px;
-  object-fit: fill;
-  width: 300px;
-  height: 300px;
-}
-
-
-
