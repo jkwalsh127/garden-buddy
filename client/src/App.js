@@ -3,6 +3,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@ap
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { setContext } from '@apollo/client/link/context';
 import './App.css';
+import './AppMediaQuery.css';
 import { NavLink } from 'react-router-dom';
 import Header from './components/Header';
 import Schedule from './pages/Schedule';

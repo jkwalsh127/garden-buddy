@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './styles/header.css';
+import './styles/headerMediaQueries.css';
 import Auth from '../utils/auth';
 
 const Header = () => {
