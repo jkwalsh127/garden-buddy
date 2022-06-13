@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './styles/login.css';
+import { useNavigate } from "react-router-dom";
+
 
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
@@ -24,6 +26,7 @@ const Signup = () => {
     });
   };
 
+  const navigate = useNavigate();
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -35,6 +38,7 @@ const Signup = () => {
       });
 
       Auth.login(data.addUser.token);
+      navigate("/gardens");
     } catch (e) {
       console.error(e);
     }
