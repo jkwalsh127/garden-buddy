@@ -14,21 +14,11 @@ Once logged in, users have access to a multitude of features. Users can discover
 
 ## Features
 
-SIGNUP: 
-
-[![Signup preview](./assets/signupGB.gif)](https://drive.google.com/file/d/1WshQhHsPU9_x0CNxzRvp730wQ2oFHA9Y/view)
+SIGNUP/LOGIN
 
 Here, the signup mutation is executed, and a token is received. The token is then immediately stored using the AuthService functionality. 
 
 <img src="./assets/signup.png" alt="Signup code snip">
-
-LOGIN: 
-
-[![Login preview](./assets/login.gif)](https://drive.google.com/file/d/1ofYgHkS23hBWMJ9FMGgrC1mIWVZOYPhF/view)
-
-Here, the login mutation is executed, and in return, a token is received. The token is then immediately stored using the AuthService functionality. 
-
-<img src="./assets/login.png" alt="Login code snip">
 
 FIND MY ZONE: 
 
@@ -40,15 +30,11 @@ Here is the API call that fetches the specific zone the user lives in based on w
 
 GARDENS: 
 
-[![Gardens preview](./assets/gardens.gif)](https://drive.google.com/file/d/10HjVt9_WaVicstN0mKxdOJyR2uKF3soi/view)
-
 Here, the gardens are being queried. 
 
 <img src="./assets/gardens.png" alt="Gardens code snip">
 
 GUIDES: 
-
-[![Guides preview](./assets/guides.gif)](https://drive.google.com/file/d/1PE2dI0Nuc_8nqtd0ATNFo2JObIys2R7r/view)
 
 Here, the components for the guides are linked to the main "Grow Guides" page.
 
