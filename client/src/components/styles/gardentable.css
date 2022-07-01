@@ -1,6 +1,7 @@
 .table-wrap {
   display: flex;
   justify-content: center;
+  overflow: scroll;
 }
 table, th, td {
   border: 1px solid var(--green);
